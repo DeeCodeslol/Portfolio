@@ -36,6 +36,7 @@
 
           <div class="hero-buttons">
             <a class="btn btn-outline" href="index.html#projects">← Back to Projects</a>
+            <a class="btn" href="#report">View Usability Report</a>
           </div>
 
           <div class="chips" style="margin-top: 12px;">
@@ -57,7 +58,15 @@
         </div>
       </div>
     </section>
-<!-- OVERVIEW -->
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+
+    <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
         <h2>Overview</h2>
@@ -144,6 +153,38 @@
             <h3>Recommendations</h3>
             <p class="muted">Simplified navigation labels, a clear application timeline, and a prominent FAQ section were proposed as high-impact improvements.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USABILITY REPORT PDF -->
+    <section id="report" class="section alt">
+      <div class="container">
+        <h2>Usability Report</h2>
+        <p class="section-lead">
+          Here's the full usability evaluation report for the Changemaker website.
+        </p>
+
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div style="position: relative; width: 100%; padding-top: 56.25%;">
+            <iframe
+              src="UsabilityReportCM_Sundaresan.pdf"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+              ">
+            </iframe>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <a class="text-link" href="UsabilityReportCM_Sundaresan.pdf" target="_blank" rel="noopener">
+            Open Report →
+          </a>
         </div>
       </div>
     </section>
