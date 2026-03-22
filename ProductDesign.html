@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Promotional Product Design | Dheepthi Sundaresan</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -209,6 +210,12 @@
       border: 1px solid #e6e6e6;
       border-radius: 14px;
       overflow: hidden;
+    }
+
+    .promo-card:last-child {
+      grid-column: 1 / -1;
+      max-width: calc(50% - 9px);
+      margin: 0 auto;
     }
 
     .promo-image {
