@@ -4,15 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Changemaker Usability Evaluation | Dheepthi Sundaresan</title>
+<<<<<<< HEAD
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+=======
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+>>>>>>> 532a50f (Page modified with Claude)
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ASU Changemaker theme — Maroon #8C1D40 + Gold #FFC627 */
+    :root {
+      --accent:       #8C1D40;
+      --accent-hover: #6b1530;
+      --accent-light: #fce8ef;
+      --bg-alt:       #fdf5f7;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4a0e22 0%, #8C1D40 65%, #a8244e 100%);
+      box-shadow: none;
+      padding-bottom: 64px;
+    }
+
+    .hero-blob { display: none; }
+
+    .hero h1 { color: #ffffff; }
+
+    .hero-name {
+      background: linear-gradient(135deg, #FFC627 0%, #ffdd70 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tag {
+      background: rgba(255, 198, 39, 0.18);
+      color: #FFC627;
+      border-color: rgba(255, 198, 39, 0.35);
+    }
+
+    .subtitle { color: rgba(255,255,255,0.72); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: none;
+    }
+
+    .hero-card h2 { color: #ffffff; }
+    .quick-list li { color: rgba(255,255,255,0.65); }
+    .quick-label   { color: rgba(255,255,255,0.9); }
+
+    .scroll-indicator svg { stroke: #FFC627; }
+
+    /* Gold CTA button */
+    .btn:not(.btn-outline) {
+      background: #FFC627;
+      border-color: #FFC627;
+      color: #3a1000;
+    }
+    .btn:not(.btn-outline):hover {
+      background: #f0b800;
+      border-color: #f0b800;
+      box-shadow: 0 8px 24px rgba(255,198,39,0.4);
+    }
+
+    .btn-outline {
+      color: rgba(255,255,255,0.85);
+      border-color: rgba(255,255,255,0.3);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+      color: #ffffff;
+    }
+
+    .section h2::after { background: #8C1D40; }
+
+    .timeline-item { border-left-color: #8C1D40; }
+
+    .chip:hover {
+      background: #fce8ef;
+      border-color: #8C1D40;
+      color: #6b1530;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="header">
     <nav class="nav">
-      <a class="logo" href="index.html#top">Dheepthi Sundaresan</a>
+      <a class="logo" href="index.html#top">DS</a>
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#projects">Projects</a></li>
@@ -25,22 +111,19 @@
 
   <main id="top">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-content">
         <div>
-          <p class="tag">UX Research • Usability Evaluation</p>
-          <h1>Changemaker Website Usability Evaluation</h1>
+          <p class="tag">UX Research &bull; Usability Evaluation</p>
+          <h1>Changemaker<br><span class="hero-name">Usability Evaluation</span></h1>
           <p class="subtitle">
-            A usability evaluation report and presentation proposing design and process improvements to enhance clarity and transparency on the Changemaker at ASU West Valley website.
+            A usability evaluation report proposing design and process improvements to enhance clarity and transparency on the Changemaker at ASU West Valley website.
           </p>
-
           <div class="hero-buttons">
-            <a class="btn btn-outline" href="index.html#projects">← Back to Projects</a>
-            <a class="btn" href="#report">View Usability Report</a>
+            <a class="btn btn-outline" href="index.html#projects">&larr; Back to Projects</a>
+            <a class="btn" href="#report">View Report</a>
           </div>
-
-          <div class="chips" style="margin-top: 12px;">
+          <div class="chips" style="margin-top:16px;">
             <span class="chip">Heuristic Evaluation</span>
             <span class="chip">Usability Testing</span>
             <span class="chip">UX Research</span>
@@ -51,24 +134,23 @@
         <div class="hero-card">
           <h2>Project Details</h2>
           <ul class="quick-list">
-            <li><strong>Role:</strong> UX Researcher</li>
-            <li><strong>Tools:</strong> Google Docs, FigJam</li>
-            <li><strong>Focus:</strong> Clarity, navigation, transparency</li>
-            <li><strong>Context:</strong> Campus Lead at ASU West Valley</li>
+            <li><span class="quick-label">Role</span> UX Researcher</li>
+            <li><span class="quick-label">Tools</span> Google Docs, FigJam</li>
+            <li><span class="quick-label">Focus</span> Clarity, navigation, transparency</li>
+            <li><span class="quick-label">Context</span> Campus Lead at ASU West Valley</li>
           </ul>
         </div>
       </div>
     </section>
-<!-- OVERVIEW -->
+
     <section class="section">
       <div class="container">
-        <h2>Overview</h2>
-        <p class="section-lead">
+        <h2 class="reveal">Overview</h2>
+        <p class="section-lead reveal">
           As Campus Lead for Changemaker at ASU West Valley, I identified usability gaps on the program's website that created confusion for prospective students. This evaluation documented those issues and proposed actionable improvements.
         </p>
-
         <div class="two-col">
-          <div class="card">
+          <div class="card reveal">
             <h3>Problem</h3>
             <ul class="bullets">
               <li>Navigation structure made it hard to find key program information</li>
@@ -76,8 +158,7 @@
               <li>Content hierarchy did not reflect user priorities</li>
             </ul>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Goals</h3>
             <ul class="bullets">
               <li>Identify and document usability breakdowns</li>
@@ -89,16 +170,12 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section class="section alt">
       <div class="container">
-        <h2>Process</h2>
-        <p class="section-lead">
-          I applied structured UX evaluation methods to assess the site and build a case for change.
-        </p>
-
+        <h2 class="reveal">Process</h2>
+        <p class="section-lead reveal">I applied structured UX evaluation methods to assess the site and build a case for change.</p>
         <div class="two-col">
-          <div class="card">
+          <div class="card reveal">
             <h3>Methods</h3>
             <ul class="bullets">
               <li>Heuristic evaluation using Nielsen's 10 principles</li>
@@ -106,8 +183,7 @@
               <li>Comparative review of similar program websites</li>
             </ul>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Deliverables</h3>
             <ul class="bullets">
               <li>Usability evaluation report</li>
@@ -119,64 +195,89 @@
       </div>
     </section>
 
-    <!-- KEY FINDINGS -->
     <section class="section">
       <div class="container">
-        <h2>Key Findings</h2>
-
+        <h2 class="reveal">Key Findings</h2>
         <div class="two-col">
-          <div class="card">
+          <div class="card reveal">
             <h3>Navigation Gaps</h3>
             <p class="muted">Users had difficulty locating application deadlines and program requirements due to inconsistent labeling and deep page nesting.</p>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Transparency Issues</h3>
-            <p class="muted">The application process lacked clear expectations, creating hesitation among prospective students. There were also outdated bullet points on a few of their webpages, which would mislead users.</p>
+            <p class="muted">The application process lacked clear expectations, creating hesitation among prospective students. Outdated bullet points on several pages also misled users.</p>
           </div>
         </div>
-
-        <div class="two-col" style="margin-top: 18px;">
-          <div class="card">
+        <div class="two-col" style="margin-top:18px;">
+          <div class="card reveal">
             <h3>Content Hierarchy</h3>
             <p class="muted">The most important information was not visually prioritized, causing users to miss key details on first scan.</p>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Recommendations</h3>
-            <p class="muted">Simplified navigation labels, a clear application timeline, a prominent FAQ section, updated contact information, and deletion of misleading points were all suggested recommendations.</p>
+            <p class="muted">Simplified navigation labels, a clear application timeline, a prominent FAQ section, updated contact information, and deletion of misleading content.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- USABILITY REPORT PDF -->
-    <section id="report" class="section alt">
+    <section class="section">
       <div class="container">
-        <h2>Usability Report</h2>
-        <p class="section-lead">
-          Here's the full usability evaluation report for the Changemaker website.
+        <h2 class="reveal">Summary of Report</h2>
+        <p class="section-lead reveal">
+          The full report, titled <em>Changing Changemaker: Enhancing the Website for Student Engagement</em>, argues that the organization's digital presence is attracting visitors but failing to convert them into participants. Here is what it found.
         </p>
 
-        <div class="card" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; width: 100%; padding-top: 56.25%;">
-            <iframe
-              src="UsabilityReportCM_Sundaresan.pdf"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
-              ">
-            </iframe>
+        <div class="two-col">
+          <div class="card reveal">
+            <h3>The Data Problem</h3>
+            <p class="muted">
+              Google Analytics data from October 2024 to October 2025 showed 13,515 sessions and 19,311 pageviews. Yet the average session was only 26 seconds long and the site recorded zero RFI submissions. The "Contact Us" page saw a 15.2% drop in traffic, and the Volunteer ASU page, despite a 56% spike in visitors, held their attention for only 17 seconds. The site was drawing people in but giving them no reason to stay.
+            </p>
+          </div>
+          <div class="card reveal" style="--delay:100ms">
+            <h3>Root Causes</h3>
+            <p class="muted">
+              The issue was not a lack of content but a lack of structure. Key calls to action like "Join Changemaker" redirected users to external Google Forms with no context about response time or next steps. CAG application links sent students to low-quality third-party sites. Navigation labels were inconsistent and a centralized involvement guide was completely absent. These gaps created confusion and killed momentum before students could take action.
+            </p>
           </div>
         </div>
 
-        <div style="margin-top: 16px;">
+        <div class="two-col" style="margin-top:18px;">
+          <div class="card reveal">
+            <h3>Three Proposed Solutions</h3>
+            <ul class="bullets">
+              <li><strong>Simplified navigation:</strong> Replace fragmented menus with a unified "Get Involved" tab that surfaces all participation pathways clearly.</li>
+              <li><strong>Procedural pages:</strong> Create step-by-step guides for joining, applying for CAGs, and attending events, including response timelines and contact information.</li>
+              <li><strong>Content consistency:</strong> Develop a style guide to standardize tone, labels, and layout hierarchy across all pages and linked forms.</li>
+            </ul>
+          </div>
+          <div class="card reveal" style="--delay:100ms">
+            <h3>Final Recommendation</h3>
+            <p class="muted">
+              The report recommends a hybrid redesign combining all three approaches. Simplified navigation reduces the effort required to find opportunities. Procedural pages close the gap between curiosity and action. Content consistency builds trust and long-term credibility. Together, these changes align the website with Nielsen's usability heuristics and support ASU's charter of inclusion, access, and community engagement, making it easier for every student to find their place in Changemaker.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="report" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Usability Report</h2>
+        <p class="section-lead reveal">Here's the full usability evaluation report for the Changemaker website.</p>
+        <div class="card reveal" style="padding:0; overflow:hidden;">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              src="UsabilityReportCM_Sundaresan.pdf"
+              title="Changemaker website usability evaluation report PDF"
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+            </iframe>
+          </div>
+        </div>
+        <div style="margin-top:16px;">
           <a class="text-link" href="UsabilityReportCM_Sundaresan.pdf" target="_blank" rel="noopener">
-            Open Report →
+            Open Report &rarr;
           </a>
         </div>
       </div>
@@ -184,13 +285,13 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
-      <p>© <span id="year">2026</span> Dheepthi Sundaresan. All rights reserved.</p>
-      <a class="text-link" href="#top">Back to top ↑</a>
+      <p>&copy; <span id="year"></span> Dheepthi Sundaresan. All rights reserved.</p>
+      <a class="text-link" href="#top">Back to top &uarr;</a>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

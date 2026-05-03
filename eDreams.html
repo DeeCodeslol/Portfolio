@@ -4,15 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eDreams Homepage Refresh | Dheepthi Sundaresan</title>
+<<<<<<< HEAD
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+=======
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+>>>>>>> 532a50f (Page modified with Claude)
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* eDreams theme — navy blue + sky blue + orange accent */
+    :root {
+      --accent:       #0055d4;
+      --accent-hover: #003fa8;
+      --accent-light: #dbeafe;
+      --bg-alt:       #f0f6ff;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #001a6e 0%, #003594 60%, #0055d4 100%);
+      box-shadow: none;
+      padding-bottom: 64px;
+    }
+
+    /* Keep blobs subtle on dark hero */
+    .hero-blob { display: none; }
+
+    .hero h1 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      color: #ffffff;
+    }
+
+    .hero-name {
+      background: linear-gradient(135deg, #60a5fa 0%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.12);
+      color: #93c5fd;
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .subtitle { color: rgba(255,255,255,0.72); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: none;
+    }
+
+    .hero-card h2 { color: #ffffff; }
+
+    .quick-list li { color: rgba(255,255,255,0.65); }
+    .quick-label   { color: rgba(255,255,255,0.9); }
+
+    .scroll-indicator svg { stroke: #60a5fa; }
+
+    /* Orange CTA button for eDreams feel */
+    .btn:not(.btn-outline) {
+      background: #f97316;
+      border-color: #f97316;
+      color: #ffffff;
+    }
+    .btn:not(.btn-outline):hover {
+      background: #ea6c0a;
+      border-color: #ea6c0a;
+      box-shadow: 0 8px 24px rgba(249,115,22,0.4);
+    }
+
+    .btn-outline {
+      color: rgba(255,255,255,0.85);
+      border-color: rgba(255,255,255,0.3);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+      color: #ffffff;
+    }
+
+    .section h2::after { background: #0055d4; }
+
+    .chip:hover {
+      background: #dbeafe;
+      border-color: #0055d4;
+      color: #003fa8;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV (same theme) -->
   <header class="header">
     <nav class="nav">
-      <a class="logo" href="index.html#top">Dheepthi Sundaresan</a>
+      <a class="logo" href="index.html#top">DS</a>
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#projects">Projects</a></li>
@@ -25,23 +114,19 @@
 
   <main id="top">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-content">
         <div>
-          <p class="tag">UI/UX • Homepage Refresh</p>
-          <h1>eDreams Homepage Refresh</h1>
+          <p class="tag">UI/UX &bull; Homepage Refresh</p>
+          <h1>eDreams<br><span class="hero-name">Homepage Refresh</span></h1>
           <p class="subtitle">
-            A concept redesign to improve hierarchy, reduce clutter, and strengthen trust—validated through remote moderated usability testing.
+            A concept redesign to improve hierarchy, reduce clutter, and strengthen trust — validated through remote moderated usability testing.
           </p>
-
           <div class="hero-buttons">
-            <a class="btn btn-outline" href="index.html#projects">← Back to Projects</a>
+            <a class="btn btn-outline" href="index.html#projects">&larr; Back to Projects</a>
             <a class="btn" href="#wireframe">View Wireframe</a>
           </div>
-
-          <!-- Optional chips: matches your style.css -->
-          <div class="chips" style="margin-top: 12px;">
+          <div class="chips" style="margin-top:16px;">
             <span class="chip">Figma</span>
             <span class="chip">Zoom Testing</span>
             <span class="chip">Heuristic Evaluation</span>
@@ -52,25 +137,24 @@
         <div class="hero-card">
           <h2>Project Details</h2>
           <ul class="quick-list">
-            <li><strong>Role:</strong> UX Researcher & UI Designer</li>
-            <li><strong>Tools:</strong> Figma, Google Docs, Zoom</li>
-            <li><strong>Participants:</strong> 5 (remote moderated)</li>
-            <li><strong>Focus:</strong> Hierarchy, CTA clarity, trust signals</li>
+            <li><span class="quick-label">Role</span> UX Researcher &amp; UI Designer</li>
+            <li><span class="quick-label">Tools</span> Figma, Google Docs, Zoom</li>
+            <li><span class="quick-label">Users</span> 5 participants (remote)</li>
+            <li><span class="quick-label">Focus</span> Hierarchy, CTA clarity, trust</li>
           </ul>
         </div>
       </div>
     </section>
-<!-- OVERVIEW -->
+
     <section class="section">
       <div class="container">
-        <h2>Overview</h2>
-        <p class="section-lead">
+        <h2 class="reveal">Overview</h2>
+        <p class="section-lead reveal">
           The original homepage contained competing promotions and unclear hierarchy, making it harder for users to quickly start a flight search.
           This refresh prioritizes a clear primary action, stronger layout structure, and trust cues to reduce hesitation.
         </p>
-
         <div class="two-col">
-          <div class="card">
+          <div class="card reveal">
             <h3>Problem</h3>
             <ul class="bullets">
               <li>Cluttered layout with competing sections</li>
@@ -78,8 +162,7 @@
               <li>Trust signals not obvious at key decision moments</li>
             </ul>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Goals</h3>
             <ul class="bullets">
               <li>Make flight search the clear #1 action</li>
@@ -92,16 +175,12 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section class="section alt">
-      <div class="container">
-        <h2>Process</h2>
-        <p class="section-lead">
-          I combined evaluation methods with usability testing to validate design decisions.
-        </p>
-
+      <div cslass="container">
+        <h2 class="reveal">Process</h2>
+        <p class="section-lead reveal">I combined evaluation methods with usability testing to validate design decisions.</p>
         <div class="two-col">
-          <div class="card">
+          <div class="card reveal">
             <h3>Methods</h3>
             <ul class="bullets">
               <li>Competitive analysis of travel booking homepages</li>
@@ -109,8 +188,7 @@
               <li>Remote moderated usability test via Zoom (5 participants)</li>
             </ul>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Testing (Zoom)</h3>
             <ul class="bullets">
               <li><strong>Goal:</strong> evaluate clarity + what users click first</li>
@@ -122,30 +200,25 @@
       </div>
     </section>
 
-    <!-- KEY DECISIONS -->
     <section class="section">
       <div class="container">
-        <h2>Key Design Decisions</h2>
-
+        <h2 class="reveal">Key Design Decisions</h2>
         <div class="two-col">
-          <div class="card">
+          <div class="card reveal">
             <h3>Centralized Search</h3>
             <p class="muted">Flight search is visually prioritized to reduce friction and speed up the primary task.</p>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Cleaner Hierarchy</h3>
             <p class="muted">Spacing, alignment, and section structure were improved to make scanning easier.</p>
           </div>
         </div>
-
-        <div class="two-col" style="margin-top: 18px;">
-          <div class="card">
+        <div class="two-col" style="margin-top:18px;">
+          <div class="card reveal">
             <h3>Promotion Control</h3>
             <p class="muted">Promotions were structured so they support the page without overpowering the main CTA.</p>
           </div>
-
-          <div class="card">
+          <div class="card reveal" style="--delay:100ms">
             <h3>Trust Signals</h3>
             <p class="muted">Credibility cues and transparency messaging were elevated to reduce hesitation.</p>
           </div>
@@ -153,51 +226,39 @@
       </div>
     </section>
 
-    <!-- HI-FI WIREFRAME IMAGE -->
     <section id="wireframe" class="section alt">
       <div class="container">
-        <h2>High-Fidelity Wireframe</h2>
-        <p class="section-lead">
-          Here’s the high-fidelity wireframe for the refreshed homepage. Hold and drag with your mouse to toggle the design!
+        <h2 class="reveal">High-Fidelity Wireframe</h2>
+        <p class="section-lead reveal">
+          Here's the high-fidelity wireframe for the refreshed homepage. Hold and drag with your mouse to toggle the design!
         </p>
-
-       <div class="card" style="padding: 0; overflow: hidden;">
-      <div style="position: relative; width: 100%; padding-top: 56.25%;">
-        <iframe 
-          src="https://embed.figma.com/design/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final?node-id=0-1&embed-host=share"
-          allowfullscreen
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-          ">
-        </iframe>
-      </div>
-    </div>
-
-    <div style="margin-top: 16px;">
-      <a class="text-link" 
-         href="https://www.figma.com/file/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final"
-         target="_blank"
-         rel="noopener">
-         Open in Figma →
-      </a>
-    </div>
+        <div class="card reveal" style="padding:0; overflow:hidden;">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              src="https://embed.figma.com/design/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final?node-id=0-1&embed-host=share"
+              title="eDreams homepage high-fidelity wireframe in Figma"
+              allowfullscreen
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+            </iframe>
+          </div>
+        </div>
+        <div style="margin-top:16px;">
+          <a class="text-link" href="https://www.figma.com/file/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final" target="_blank" rel="noopener">
+            Open in Figma &rarr;
+          </a>
+        </div>
       </div>
     </section>
 
-
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
-      <p>© <span id="year">2026</span> Dheepthi Sundaresan. All rights reserved.</p>
-      <a class="text-link" href="#top">Back to top ↑</a>
+      <p>&copy; <span id="year"></span> Dheepthi Sundaresan. All rights reserved.</p>
+      <a class="text-link" href="#top">Back to top &uarr;</a>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
+</html>
