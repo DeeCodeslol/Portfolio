@@ -375,30 +375,24 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 60px;
   overflow: hidden;
-  line-height: 0;
   pointer-events: none;
 }
 
-.hero-wave-track {
-  display: flex;
-  animation: wave-flow 10s linear infinite;
+.hero-wave::after {
+  content: '';
+  display: block;
+  width: 200%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'><path d='M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 L1440,60 L0,60 Z' fill='%23f0fdf4'/></svg>");
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  animation: wave-slide 10s linear infinite;
   will-change: transform;
 }
 
-.hero-wave-track svg {
-  display: block;
-  width: 100vw;
-  min-width: 100vw;
-  height: 60px;
-  flex-shrink: 0;
-}
-
-.hero-wave path {
-  fill: var(--bg-alt);
-}
-
-@keyframes wave-flow {
+@keyframes wave-slide {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }

@@ -22,7 +22,7 @@
       background: linear-gradient(175deg, #ffffff 50%, var(--bg-alt) 100%);
     }
 
-    .hero-wave path { fill: #16a34a; }
+    .hero-wave::after { background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'><path d='M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 L1440,60 L0,60 Z' fill='%2316a34a'/></svg>"); }
 
     .hero-name {
       background: linear-gradient(135deg, #16a34a 0%, #f59e0b 100%);
@@ -235,16 +235,7 @@
         </svg>
       </div>
 
-      <div class="hero-wave" aria-hidden="true">
-        <div class="hero-wave-track">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 L1440,60 L0,60 Z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 L1440,60 L0,60 Z"/>
-          </svg>
-        </div>
-      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
     </section>
 
     <section id="gallery" class="section alt">
