@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Changemaker Usability Evaluation | Dheepthi Sundaresan</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +24,6 @@
     }
 
     .hero-blob { display: none; }
-
     .hero h1 { color: #ffffff; }
 
     .hero-name {
@@ -55,9 +53,6 @@
     .quick-list li { color: rgba(255,255,255,0.65); }
     .quick-label   { color: rgba(255,255,255,0.9); }
 
-    .scroll-indicator svg { stroke: #FFC627; }
-
-    /* Gold CTA button */
     .btn:not(.btn-outline) {
       background: #FFC627;
       border-color: #FFC627;
@@ -82,12 +77,116 @@
 
     .section h2::after { background: #8C1D40; }
 
-    .timeline-item { border-left-color: #8C1D40; }
-
     .chip:hover {
       background: #fce8ef;
       border-color: #8C1D40;
       color: #6b1530;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0 20px;
+    }
+    .stat-card {
+      background: rgba(140, 29, 64, 0.05);
+      border: 1.5px solid rgba(140, 29, 64, 0.18);
+      border-radius: 16px;
+      padding: 28px 16px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 42px;
+      font-weight: 800;
+      color: #8C1D40;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      margin-bottom: 7px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Numbered process steps */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .step-card {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(140,29,64,0.12);
+    }
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: #8C1D40;
+      color: #FFC627;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+    .step-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step-card p  { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* Finding / Recommendation rows */
+    .finding-row { display: grid; gap: 14px; margin-top: 8px; }
+    .finding-item {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .finding-col {
+      padding: 0 28px;
+    }
+    .finding-col:first-child {
+      border-right: 1.5px solid var(--card-border);
+    }
+    .finding-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .finding-label.issue { color: #8C1D40; }
+    .finding-label.fix   { color: #16a34a; }
+    .finding-col h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .finding-col p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    .hero-wave path { fill: #ffffff; }
+
+    @media (max-width: 700px) {
+      .stats-row { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; }
+      .finding-item { grid-template-columns: 1fr; padding: 20px 0; }
+      .finding-col:first-child {
+        border-right: none;
+        border-bottom: 1.5px solid var(--card-border);
+        padding-bottom: 20px;
+        margin-bottom: 4px;
+      }
     }
   </style>
 </head>
@@ -114,7 +213,7 @@
           <p class="tag">UX Research &bull; Usability Evaluation</p>
           <h1>Changemaker<br><span class="hero-name">Usability Evaluation</span></h1>
           <p class="subtitle">
-            A usability evaluation report proposing design and process improvements to enhance clarity and transparency on the Changemaker at ASU West Valley website.
+            A research-backed usability evaluation of the Changemaker at ASU West Valley website, proposing design and process improvements to turn student curiosity into real engagement.
           </p>
           <div class="hero-buttons">
             <a class="btn btn-outline" href="index.html#projects">&larr; Back to Projects</a>
@@ -122,9 +221,9 @@
           </div>
           <div class="chips" style="margin-top:16px;">
             <span class="chip">Heuristic Evaluation</span>
-            <span class="chip">Usability Testing</span>
+            <span class="chip">Content Audit</span>
             <span class="chip">UX Research</span>
-            <span class="chip">Google Docs</span>
+            <span class="chip">Google Analytics</span>
           </div>
         </div>
 
@@ -138,90 +237,125 @@
           </ul>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">Overview</h2>
-        <p class="section-lead reveal">
-          As Campus Lead for Changemaker at ASU West Valley, I identified usability gaps on the program's website that created confusion for prospective students. This evaluation documented those issues and proposed actionable improvements.
-        </p>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Problem</h3>
-            <ul class="bullets">
-              <li>Navigation structure made it hard to find key program information</li>
-              <li>Lack of transparency around application processes and expectations</li>
-              <li>Content hierarchy did not reflect user priorities</li>
-            </ul>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Goals</h3>
-            <ul class="bullets">
-              <li>Identify and document usability breakdowns</li>
-              <li>Propose design improvements backed by evaluation methods</li>
-              <li>Improve clarity and trust for new visitors</li>
-            </ul>
-          </div>
-        </div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2880 60" preserveAspectRatio="none">
+          <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 C1620,0 1980,0 2160,30 C2340,60 2700,60 2880,30 L2880,60 L0,60 Z"/>
+        </svg>
       </div>
     </section>
 
+    <!-- THE CHALLENGE -->
     <section class="section alt">
       <div class="container">
-        <h2 class="reveal">Process</h2>
-        <p class="section-lead reveal">I applied structured UX evaluation methods to assess the site and build a case for change.</p>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Methods</h3>
-            <ul class="bullets">
-              <li>Heuristic evaluation using Nielsen's 10 principles</li>
-              <li>Content audit to assess information structure</li>
-              <li>Comparative review of similar program websites</li>
-            </ul>
+        <h2 class="reveal">The Challenge</h2>
+        <p class="section-lead reveal">
+          As Campus Lead for Changemaker at ASU West Valley, I identified a core gap: the website was drawing in students but failing to turn their curiosity into action. Analytics from the 2024 to 2025 academic year made the problem impossible to ignore.
+        </p>
+        <div class="stats-row reveal">
+          <div class="stat-card">
+            <div class="stat-number">13,515</div>
+            <div class="stat-label">annual sessions</div>
           </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Deliverables</h3>
-            <ul class="bullets">
-              <li>Usability evaluation report</li>
-              <li>Presentation of findings and recommendations</li>
-              <li>Prioritized list of design and content improvements</li>
-            </ul>
+          <div class="stat-card">
+            <div class="stat-number">26 sec</div>
+            <div class="stat-label">average session time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">form completions recorded</div>
           </div>
         </div>
+        <p class="reveal" style="color:var(--text-muted); font-size:15px; max-width:680px; line-height:1.75;">
+          The issue wasn't a lack of content. Vague navigation labels, calls to action that bounced users to external forms with no context, and zero procedural guidance left students with more questions than answers before they ever found a reason to stay.
+        </p>
       </div>
     </section>
 
+    <!-- RESEARCH PROCESS -->
     <section class="section">
       <div class="container">
-        <h2 class="reveal">Key Findings</h2>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Navigation Gaps</h3>
-            <p class="muted">Users had difficulty locating application deadlines and program requirements due to inconsistent labeling and deep page nesting.</p>
+        <h2 class="reveal">Research Process</h2>
+        <p class="section-lead reveal">Three structured evaluation methods assessed the site and built a research-backed case for change.</p>
+        <div class="steps-row">
+          <div class="step-card reveal">
+            <div class="step-num">1</div>
+            <h3>Heuristic Evaluation</h3>
+            <p>Assessed the site against Nielsen's 10 usability principles to surface interface-level breakdowns in navigation, feedback, and consistency.</p>
           </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Transparency Issues</h3>
-            <p class="muted">The application process lacked clear expectations, creating hesitation among prospective students. Outdated bullet points on several pages also misled users.</p>
+          <div class="step-card reveal" style="--delay:80ms">
+            <div class="step-num">2</div>
+            <h3>Content Audit</h3>
+            <p>Catalogued every page, link, and call to action to map where information was missing, duplicated, or actively misleading users.</p>
+          </div>
+          <div class="step-card reveal" style="--delay:160ms">
+            <div class="step-num">3</div>
+            <h3>Comparative Review</h3>
+            <p>Benchmarked the site against similar university program websites to identify patterns and opportunities the current design was missing.</p>
           </div>
         </div>
-        <div class="two-col" style="margin-top:18px;">
-          <div class="card reveal">
-            <h3>Content Hierarchy</h3>
-            <p class="muted">The most important information was not visually prioritized, causing users to miss key details on first scan.</p>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Recommendations</h3>
-            <p class="muted">Simplified navigation labels, a clear application timeline, a prominent FAQ section, updated contact information, and deletion of misleading content.</p>
+        <div class="reveal" style="margin-top:24px; --delay:220ms">
+          <p style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:10px;">Deliverables</p>
+          <div class="chips">
+            <span class="chip">Usability Evaluation Report</span>
+            <span class="chip">Findings Presentation</span>
+            <span class="chip">Prioritized Recommendations</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="report" class="section alt">
+    <!-- FINDINGS + RECOMMENDATIONS -->
+    <section class="section alt">
       <div class="container">
-        <h2 class="reveal">Usability Report</h2>
-        <p class="section-lead reveal">Here's the full usability evaluation report for the Changemaker website.</p>
+        <h2 class="reveal">Findings and Recommendations</h2>
+        <p class="section-lead reveal">Three core usability issues emerged from the evaluation, each paired with a targeted, research-backed solution.</p>
+        <div class="finding-row">
+          <div class="finding-item reveal">
+            <div class="finding-col">
+              <span class="finding-label issue">Finding</span>
+              <h3>Navigation Gaps</h3>
+              <p>Application deadlines and program requirements were buried under inconsistent labels and deep page nesting. Users could not find what they needed without clicking through multiple dead ends.</p>
+            </div>
+            <div class="finding-col">
+              <span class="finding-label fix">Recommendation</span>
+              <h3>Unified "Get Involved" Hub</h3>
+              <p>Replace fragmented links with a single, clearly labeled section surfacing all participation pathways, roles, and deadlines in one place.</p>
+            </div>
+          </div>
+          <div class="finding-item reveal" style="--delay:80ms">
+            <div class="finding-col">
+              <span class="finding-label issue">Finding</span>
+              <h3>Transparency Issues</h3>
+              <p>CTAs like "Join Changemaker" redirected users to external Google Forms with no response timeline or follow-up information, creating hesitation and discouraging completion.</p>
+            </div>
+            <div class="finding-col">
+              <span class="finding-label fix">Recommendation</span>
+              <h3>Procedural Pages</h3>
+              <p>Add step-by-step guides for each application and membership process, including expected response times and a point of contact for questions.</p>
+            </div>
+          </div>
+          <div class="finding-item reveal" style="--delay:160ms">
+            <div class="finding-col">
+              <span class="finding-label issue">Finding</span>
+              <h3>Content Inconsistency</h3>
+              <p>Tone, terminology, and formatting varied across subpages and linked forms, creating a fragmented experience that reduced trust and made the site feel unreliable.</p>
+            </div>
+            <div class="finding-col">
+              <span class="finding-label fix">Recommendation</span>
+              <h3>Content Style Guide</h3>
+              <p>Standardize language, button labels, and layout hierarchy across all pages and forms to create a cohesive, trustworthy experience built for long-term maintenance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL REPORT -->
+    <section id="report" class="section">
+      <div class="container">
+        <h2 class="reveal">Full Report</h2>
+        <p class="section-lead reveal">Read the complete usability evaluation report.</p>
         <div class="card reveal" style="padding:0; overflow:hidden;">
           <div style="position:relative; width:100%; padding-top:56.25%;">
             <iframe

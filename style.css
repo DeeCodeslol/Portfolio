@@ -3,14 +3,12 @@
    =========================== */
 :root {
   --bg: #ffffff;
-  --bg-alt: #f4f9f5;
-  --hero-bg: #060e06;
-  --accent: #3d8b5a;
-  --accent-hover: #2d6e46;
-  --accent-light: #e6f4ec;
+  --bg-alt: #f0fdf4;
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-light: #d1fae5;
   --text: #0d0d0d;
   --text-muted: #5f6b60;
-  --text-hero: #f0f7f0;
   --card-border: rgba(0, 0, 0, 0.07);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 32px rgba(0, 0, 0, 0.10);
@@ -138,7 +136,7 @@ body {
 }
 
 .logo:hover {
-  background: #c8ebd5;
+  background: #a7f3d0;
   transform: scale(1.05);
 }
 
@@ -165,7 +163,7 @@ body {
 }
 
 .nav-cta {
-  background: var(--text) !important;
+  background: var(--accent) !important;
   color: white !important;
   padding: 8px 16px !important;
   border-radius: 8px !important;
@@ -173,7 +171,7 @@ body {
 }
 
 .nav-cta:hover {
-  background: #1a1a1a !important;
+  background: var(--accent-hover) !important;
   color: white !important;
 }
 
@@ -183,7 +181,7 @@ body {
 .hero {
   position: relative;
   background: #ffffff;
-  padding: 90px 0 0;
+  padding: 90px 0 68px;
   overflow: hidden;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.04);
 }
@@ -199,8 +197,8 @@ body {
 .blob-1 {
   width: 520px;
   height: 520px;
-  background: #bbf7d0;
-  opacity: 0.55;
+  background: #6ee7b7;
+  opacity: 0.70;
   top: -160px;
   right: -80px;
   animation: blob-drift 11s ease-in-out infinite alternate;
@@ -209,8 +207,8 @@ body {
 .blob-2 {
   width: 420px;
   height: 420px;
-  background: #ddd6fe;
-  opacity: 0.45;
+  background: #a78bfa;
+  opacity: 0.58;
   bottom: -80px;
   left: -60px;
   animation: blob-drift 14s ease-in-out infinite alternate-reverse;
@@ -219,8 +217,8 @@ body {
 .blob-3 {
   width: 300px;
   height: 300px;
-  background: #fde68a;
-  opacity: 0.4;
+  background: #fcd34d;
+  opacity: 0.52;
   top: 40px;
   left: 35%;
   animation: blob-drift 9s ease-in-out infinite alternate;
@@ -265,7 +263,7 @@ body {
 }
 
 .hero-name {
-  background: linear-gradient(135deg, #16a34a 0%, #6366f1 100%);
+  background: linear-gradient(135deg, #10b981 0%, #7c3aed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -298,44 +296,7 @@ body {
 
 .avatar {
   width: 100%;
-<<<<<<< HEAD
-  aspect-ratio: 3 / 4;        
-  border-radius: 14px;
-  object-fit: cover;
-  object-position: center 20%; 
-  display: block;
-  background: #eaeaea;
-}
-
-/* ABOUT 2-COL */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.bullets {
-  padding-left: 24px;
-}
-
-.quick-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-/* PROJECT GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.project-thumb {
-  width: 100%;
-  height: 140px;
-=======
   aspect-ratio: 3 / 4;
->>>>>>> 532a50f (Page modified with Claude)
   border-radius: 12px;
   object-fit: cover;
   object-position: center 20%;
@@ -404,6 +365,34 @@ body {
 .scroll-indicator.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+/* ===========================
+   HERO WAVE
+   =========================== */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  line-height: 0;
+  pointer-events: none;
+  animation: wave-flow 10s linear infinite;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.hero-wave path {
+  fill: var(--bg-alt);
+}
+
+@keyframes wave-flow {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* ===========================
@@ -495,7 +484,7 @@ body {
    =========================== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -547,6 +536,13 @@ body {
 
 .project-thumb--product {
   background: linear-gradient(140deg, #166534 0%, #16a34a 60%, #d97706 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-thumb--mabe {
+  background: linear-gradient(140deg, #1a1040 0%, #3b1f7a 60%, #6d3fc2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -851,9 +847,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 2px solid #4ecb8d;
-  background: #4ecb8d;
-  color: #060e06;
+  border: 2px solid #10b981;
+  background: #10b981;
+  color: #022c22;
   padding: 12px 22px;
   border-radius: 10px;
   text-decoration: none;
@@ -864,10 +860,10 @@ body {
 }
 
 .btn:hover {
-  background: #3dba7c;
-  border-color: #3dba7c;
+  background: #059669;
+  border-color: #059669;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(78, 203, 141, 0.35);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.40);
 }
 
 .btn-outline {

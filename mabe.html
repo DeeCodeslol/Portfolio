@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mabe Products Website Redesign | Dheepthi Sundaresan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Mabe Products theme — warm beige + pastels */
+    :root {
+      --accent:       #c4856a;
+      --accent-hover: #b0705a;
+      --accent-light: #fceee9;
+      --bg-alt:       #fdf7f3;
+    }
+
+    .hero {
+      background: #fffaf6;
+      padding-bottom: 68px;
+    }
+
+    /* Warm pastel blob overrides */
+    .blob-1 { background: #fde2c8; opacity: 0.80; }
+    .blob-2 { background: #f5cfe8; opacity: 0.65; }
+    .blob-3 { background: #c8e8ce; opacity: 0.55; }
+
+    .hero h1 { color: var(--text); }
+
+    .hero-name {
+      background: linear-gradient(135deg, #c4856a 0%, #a07abf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tag {
+      background: var(--accent-light);
+      color: var(--accent-hover);
+      border-color: rgba(196, 133, 106, 0.3);
+    }
+
+    .subtitle { color: var(--text-muted); }
+
+    .hero-card {
+      background: #ffffff;
+      border-color: var(--card-border);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .hero-card h2 { color: var(--text); }
+    .quick-list li { color: var(--text-muted); }
+    .quick-label   { color: var(--text); }
+
+    .scroll-indicator svg { stroke: var(--accent); }
+
+    .btn:not(.btn-outline) {
+      background: #c4856a;
+      border-color: #c4856a;
+      color: #ffffff;
+    }
+    .btn:not(.btn-outline):hover {
+      background: #b0705a;
+      border-color: #b0705a;
+      box-shadow: 0 8px 24px rgba(196,133,106,0.35);
+    }
+
+    .btn-outline {
+      color: var(--text);
+      border-color: var(--card-border);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      box-shadow: none;
+    }
+
+    .section h2::after { background: #c4856a; }
+
+    .chip:hover {
+      background: #fceee9;
+      border-color: #c4856a;
+      color: #b0705a;
+    }
+
+    /* Wave uses warm cream fill */
+    .hero-wave path { fill: var(--bg-alt); }
+
+    /* Numbered process steps */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .step-card {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(196,133,106,0.15);
+    }
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: #c4856a;
+      color: #fceee9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+    .step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .step-card p  { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    /* Finding / Recommendation rows */
+    .finding-row { display: grid; gap: 14px; margin-top: 8px; }
+    .finding-item {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .finding-col { padding: 0 28px; }
+    .finding-col:first-child { border-right: 1.5px solid var(--card-border); }
+    .finding-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .finding-label.issue { color: #c4856a; }
+    .finding-label.fix   { color: #16a34a; }
+    .finding-col h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .finding-col p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    @media (max-width: 860px) {
+      .steps-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .steps-row { grid-template-columns: 1fr; }
+      .finding-item { grid-template-columns: 1fr; padding: 20px 0; }
+      .finding-col:first-child {
+        border-right: none;
+        border-bottom: 1.5px solid var(--card-border);
+        padding-bottom: 20px;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a class="logo" href="index.html#top">DS</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a class="nav-cta" href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="hero-blob blob-1" aria-hidden="true"></div>
+      <div class="hero-blob blob-2" aria-hidden="true"></div>
+      <div class="hero-blob blob-3" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="animate-in" style="--anim-delay:0.1s">
+          <p class="tag">UX Research &bull; Usability Testing &bull; Redesign</p>
+          <h1 class="animate-in" style="--anim-delay:0.25s">Mabe Products<br><span class="hero-name">Website Redesign</span></h1>
+          <p class="subtitle animate-in" style="--anim-delay:0.45s">
+            A data-driven usability study of mabeproducts.com using pre and post-test questionnaires to measure real user experience before and after targeted redesign changes.
+          </p>
+          <div class="hero-buttons animate-in" style="--anim-delay:0.6s">
+            <a class="btn btn-outline" href="index.html#projects">&larr; Back to Projects</a>
+            <a class="btn" href="#findings">View Findings</a>
+          </div>
+          <div class="chips animate-in" style="margin-top:16px; --anim-delay:0.7s">
+            <span class="chip">Usability Testing</span>
+            <span class="chip">Pre/Post Questionnaire</span>
+            <span class="chip">UX Research</span>
+            <span class="chip">Web Redesign</span>
+          </div>
+        </div>
+
+        <div class="hero-card animate-in" style="--anim-delay:0.35s">
+          <h2>Project Details</h2>
+          <ul class="quick-list">
+            <li><span class="quick-label">Role</span> UX Researcher &amp; Designer</li>
+            <li><span class="quick-label">Site</span> mabeproducts.com</li>
+            <li><span class="quick-label">Methods</span> Pre/post questionnaires, usability testing</li>
+            <li><span class="quick-label">Focus</span> Task success, clarity, satisfaction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2880 60" preserveAspectRatio="none">
+          <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 C1620,0 1980,0 2160,30 C2340,60 2700,60 2880,30 L2880,60 L0,60 Z"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section alt">
+      <div class="container">
+        <h2 class="reveal">Overview</h2>
+        <p class="section-lead reveal">
+          The goal of this project was to evaluate the usability of mabeproducts.com with real users, identify where the experience broke down, and use that data to drive targeted redesign decisions that measurably improved the site.
+        </p>
+        <div class="two-col">
+          <div class="card reveal">
+            <h3>The Problem</h3>
+            <ul class="bullets">
+              <li>Users struggled to navigate to key product and information pages</li>
+              <li>Visual hierarchy and layout made it difficult to identify primary actions</li>
+              <li>No existing data confirmed or quantified the experience gaps</li>
+            </ul>
+          </div>
+          <div class="card reveal" style="--delay:100ms">
+            <h3>The Goals</h3>
+            <ul class="bullets">
+              <li>Establish a usability baseline with pre-test data before any changes</li>
+              <li>Run moderated usability sessions to observe real user behavior</li>
+              <li>Measure improvement with post-test data after redesign</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH PROCESS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Research Process</h2>
+        <p class="section-lead reveal">A four-stage process ensured every redesign decision was grounded in real user data rather than assumption.</p>
+        <div class="steps-row">
+          <div class="step-card reveal">
+            <div class="step-num">1</div>
+            <h3>Pre-Test Questionnaire</h3>
+            <p>Collected baseline data on participants' prior experience with the site, general expectations, and confidence levels before any tasks were introduced.</p>
+          </div>
+          <div class="step-card reveal" style="--delay:70ms">
+            <div class="step-num">2</div>
+            <h3>Usability Sessions</h3>
+            <p>Moderated testing sessions where participants completed key tasks on the live site while thinking aloud, surfacing real-time friction and confusion.</p>
+          </div>
+          <div class="step-card reveal" style="--delay:140ms">
+            <div class="step-num">3</div>
+            <h3>Post-Test Questionnaire</h3>
+            <p>Captured satisfaction scores, perceived ease of use, and specific pain points immediately after task completion to quantify the experience.</p>
+          </div>
+          <div class="step-card reveal" style="--delay:210ms">
+            <div class="step-num">4</div>
+            <h3>Analysis and Redesign</h3>
+            <p>Synthesized quantitative questionnaire data and qualitative session observations to identify the highest-impact changes and implement them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINDINGS + REDESIGN -->
+    <section id="findings" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Findings and Redesign Decisions</h2>
+        <p class="section-lead reveal">Pre and post-test data pointed to clear, recurring patterns. Each finding directly informed a specific redesign change.</p>
+        <div class="finding-row">
+          <div class="finding-item reveal">
+            <div class="finding-col">
+              <span class="finding-label issue">Finding</span>
+              <h3>Navigation Confusion</h3>
+              <p>Users had difficulty locating product categories and key pages. Multiple participants took incorrect paths before finding their target, indicating unclear labeling and menu structure.</p>
+            </div>
+            <div class="finding-col">
+              <span class="finding-label fix">Redesign</span>
+              <h3>Simplified Navigation Structure</h3>
+              <p>Reorganized menu labels to reflect how users described the content, reducing cognitive load and making the most-visited pages immediately accessible.</p>
+            </div>
+          </div>
+          <div class="finding-item reveal" style="--delay:80ms">
+            <div class="finding-col">
+              <span class="finding-label issue">Finding</span>
+              <h3>Weak Visual Hierarchy</h3>
+              <p>Participants had trouble identifying what to do first on key pages. Post-test scores for ease of finding information were noticeably lower than expected satisfaction.</p>
+            </div>
+            <div class="finding-col">
+              <span class="finding-label fix">Redesign</span>
+              <h3>Improved Layout and Emphasis</h3>
+              <p>Adjusted spacing, sizing, and visual weight to ensure primary actions and key information were immediately scannable on first load.</p>
+            </div>
+          </div>
+          <div class="finding-item reveal" style="--delay:160ms">
+            <div class="finding-col">
+              <span class="finding-label issue">Finding</span>
+              <h3>Low Task Confidence</h3>
+              <p>Pre-test questionnaires revealed low initial confidence, and post-test follow-up showed that unclear CTAs and sparse product information reinforced user hesitation throughout sessions.</p>
+            </div>
+            <div class="finding-col">
+              <span class="finding-label fix">Redesign</span>
+              <h3>Clearer CTAs and Content</h3>
+              <p>Rewrote and repositioned calls to action, and added supporting content to reduce uncertainty at key decision points and encourage users to move forward with confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Dheepthi Sundaresan. All rights reserved.</p>
+      <a class="text-link" href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
