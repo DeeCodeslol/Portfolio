@@ -18,12 +18,11 @@
       --bg-alt:       #f0fdf4;
     }
 
-    /* Light bubbly hero — same feel as main page but with more color */
     .hero {
       background: linear-gradient(175deg, #ffffff 50%, var(--bg-alt) 100%);
     }
 
-    .hero-wave path { fill: var(--bg-alt); }
+    .hero-wave path { fill: #16a34a; }
 
     .hero-name {
       background: linear-gradient(135deg, #16a34a 0%, #f59e0b 100%);
@@ -32,7 +31,6 @@
       background-clip: text;
     }
 
-    /* Extra blobs for a creative, colourful hero */
     .blob-1 { background: #bbf7d0; opacity: 0.6; }
     .blob-2 { background: #fde68a; opacity: 0.5; }
     .blob-3 { background: #fbcfe8; opacity: 0.45; }
@@ -45,10 +43,41 @@
       color: #15803d;
     }
 
-    /* Gallery styles */
+    /* Stats strip */
+    .pd-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .pd-stat {
+      background: rgba(22, 163, 74, 0.06);
+      border: 1.5px solid rgba(22, 163, 74, 0.15);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .pd-num {
+      display: block;
+      font-size: 38px;
+      font-weight: 800;
+      color: #16a34a;
+      line-height: 1;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+    .pd-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* Gallery */
     .promo-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
@@ -66,9 +95,17 @@
       box-shadow: 0 20px 48px rgba(0,0,0,0.12);
     }
 
+    /* Featured full-width card (horizontal layout) */
+    .promo-card--featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+    }
+
     .promo-image {
       width: 100%;
-      height: 300px;
+      height: 280px;
       object-fit: contain;
       object-position: center;
       display: block;
@@ -76,9 +113,20 @@
       padding: 16px;
     }
 
+    .promo-card--featured .promo-image {
+      height: 380px;
+      border-radius: 0;
+    }
+
     .promo-content {
       padding: 20px 22px;
       border-top: 1px solid var(--card-border);
+    }
+
+    .promo-card--featured .promo-content {
+      padding: 32px 28px;
+      border-top: none;
+      border-left: 1px solid var(--card-border);
     }
 
     .promo-content h3 {
@@ -87,14 +135,46 @@
       margin-bottom: 6px;
     }
 
+    .promo-card--featured .promo-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
     .promo-content p {
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
+    .promo-card--featured .promo-content p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Category tag */
+    .promo-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #15803d;
+      background: #dcfce7;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
     @media (max-width: 900px) {
       .promo-grid { grid-template-columns: 1fr; }
+      .promo-card--featured { grid-template-columns: 1fr; }
+      .promo-card--featured .promo-content {
+        border-top: 1px solid var(--card-border);
+        border-left: none;
+        padding: 24px 22px;
+      }
+      .promo-card--featured .promo-image { height: 280px; }
+      .pd-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -167,123 +247,64 @@
       </div>
     </section>
 
-    <section class="section alt">
+    <section id="gallery" class="section alt">
       <div class="container">
-        <h2 class="reveal">Overview</h2>
-        <p class="section-lead reveal">
-          In my work with Changemaker, I design promotional product concepts and branded materials that help communicate event themes, create a recognizable visual identity, and make student-facing experiences feel more polished and memorable.
-        </p>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>What I Designed</h3>
-            <ul class="bullets">
-              <li>Branded giveaway concepts</li>
-              <li>Event promotional materials</li>
-              <li>Student-facing visual assets</li>
-              <li>Graphics aligned with Changemaker branding</li>
-            </ul>
+        <h2 class="reveal">The Work</h2>
+        <p class="section-lead reveal">Branded materials and promotional products created for Changemaker at ASU West Valley, designed for real campus audiences and built for real-world use.</p>
+
+        <div class="pd-stats reveal">
+          <div class="pd-stat">
+            <span class="pd-num">4</span>
+            <span class="pd-label">Products Designed</span>
           </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>What This Work Shows</h3>
-            <ul class="bullets">
-              <li>Ability to design for real campus audiences</li>
-              <li>Understanding of branding across formats</li>
-              <li>Attention to visual cohesion and usability</li>
-              <li>Creative problem-solving within organizational needs</li>
-            </ul>
+          <div class="pd-stat">
+            <span class="pd-num">3</span>
+            <span class="pd-label">Stakeholder Orgs</span>
+          </div>
+          <div class="pd-stat">
+            <span class="pd-num">1</span>
+            <span class="pd-label">Campus Community</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <h2 class="reveal">Design Approach</h2>
-        <p class="section-lead reveal">
-          Each piece is designed to feel approachable, engaging, and aligned with Changemaker's mission while still being functional for promotional use.
-        </p>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Considerations</h3>
-            <ul class="bullets">
-              <li>Audience appeal for ASU students</li>
-              <li>Clear, recognizable branding</li>
-              <li>Visual consistency across products</li>
-              <li>Practicality for events and outreach</li>
-            </ul>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Goals</h3>
-            <ul class="bullets">
-              <li>Increase event visibility</li>
-              <li>Create memorable takeaways</li>
-              <li>Strengthen Changemaker's campus presence</li>
-              <li>Design assets that feel polished and intentional</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section">
-      <div class="container">
-        <h2 class="reveal">Featured Work</h2>
-        <p class="section-lead reveal">
-          These designs were created with ASU's and Changemaker's branding guidelines in mind — eye-catching, aligned with university standards, and built for real campus audiences.
-        </p>
 
         <div class="promo-grid">
-          <article class="promo-card reveal">
-            <img src="SustainableTshirt.png" alt="Sustainability T-Shirt design" class="promo-image" />
-            <div class="promo-content">
-              <h3>Sustainability T-Shirt</h3>
-              <p>Designed for Changemaker West Valley to represent the organization's sustainability pillar.</p>
-            </div>
-          </article>
 
-          <article class="promo-card reveal" style="--delay:100ms">
-            <img src="StickerDesign.png" alt="Inspiration for Change graphic" class="promo-image" />
-            <div class="promo-content">
-              <h3>Inspiration for Change Graphic</h3>
-              <p>Used on stickers and tote bags distributed during Changemaker events and initiatives.</p>
-            </div>
-          </article>
-
-          <article class="promo-card reveal" style="--delay:200ms">
+          <article class="promo-card promo-card--featured reveal">
             <img src="Final FINAL WB design.png" alt="Water bottle design for Devils in Disguise" class="promo-image" />
             <div class="promo-content">
-              <h3>Water Bottle — Devils in Disguise</h3>
-              <p>Printed on water bottles for ASU's biggest week of service. Stakeholders included Changemaker, the ASU Alumni Association, and ASU Cares.</p>
+              <span class="promo-tag">Multi-Stakeholder Campaign</span>
+              <h3>Water Bottle: Devils in Disguise</h3>
+              <p>Printed on water bottles for ASU's largest week of service, this design was created in collaboration with Changemaker, the ASU Alumni Association, and ASU Cares. The most cross-functional piece in this collection.</p>
             </div>
           </article>
 
-          <article class="promo-card reveal" style="--delay:300ms">
+          <article class="promo-card reveal" style="--delay:80ms">
+            <img src="SustainableTshirt.png" alt="Sustainability T-Shirt design" class="promo-image" />
+            <div class="promo-content">
+              <span class="promo-tag">Wearable Design</span>
+              <h3>Sustainability T-Shirt</h3>
+              <p>Representing Changemaker West Valley's sustainability pillar, worn and distributed at campus events.</p>
+            </div>
+          </article>
+
+          <article class="promo-card reveal" style="--delay:160ms">
+            <img src="StickerDesign.png" alt="Inspiration for Change graphic" class="promo-image" />
+            <div class="promo-content">
+              <span class="promo-tag">Print + Digital</span>
+              <h3>Inspiration for Change</h3>
+              <p>A versatile graphic used across stickers and tote bags distributed at Changemaker events and initiatives.</p>
+            </div>
+          </article>
+
+          <article class="promo-card reveal" style="--delay:240ms">
             <img src="PromoToteWhiteBG.png" alt="Promotional tote bag design" class="promo-image" />
             <div class="promo-content">
+              <span class="promo-tag">Campus Outreach</span>
               <h3>Promotional Tote Bag</h3>
-              <p>A branded tote bag design created to promote Changemaker's identity at campus events and outreach activities.</p>
+              <p>A branded tote designed to amplify Changemaker's campus presence at events and student outreach activities.</p>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section alt">
-      <div class="container">
-        <h2 class="reveal">Why This Belongs in My Portfolio</h2>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Design Value</h3>
-            <p class="muted">
-              This work demonstrates my ability to apply branding and visual communication principles beyond traditional screens, while still designing with audience, clarity, and experience in mind.
-            </p>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Professional Relevance</h3>
-            <p class="muted">
-              It reflects real-world design work created for an active organization, showing versatility across promotional, experiential, and campaign-based design.
-            </p>
-          </div>
         </div>
       </div>
     </section>
