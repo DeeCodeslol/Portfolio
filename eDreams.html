@@ -74,7 +74,7 @@
       box-shadow: 0 8px 24px rgba(255,210,0,0.45);
     }
 
-    .hero-wave path { fill: #ffffff; }
+    .hero-wave path { fill: var(--bg-alt); }
 
     .btn-outline {
       color: rgba(255,255,255,0.85);
@@ -93,6 +93,68 @@
       background: #dbeafe;
       border-color: #0055d4;
       color: #003fa8;
+    }
+
+    /* Stats row */
+    .e-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .e-stat {
+      background: rgba(0, 85, 212, 0.06);
+      border: 1.5px solid rgba(0, 85, 212, 0.15);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .e-num {
+      display: block;
+      font-size: 38px;
+      font-weight: 800;
+      color: #0055d4;
+      line-height: 1;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+    .e-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* Decision pills */
+    .e-decisions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .e-decision {
+      background: rgba(0, 85, 212, 0.04);
+      border: 1px solid rgba(0, 85, 212, 0.12);
+      border-radius: 12px;
+      padding: 18px 16px;
+    }
+    .e-decision strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #003fa8;
+      margin-bottom: 6px;
+    }
+    .e-decision span {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .e-stats     { grid-template-columns: repeat(2, 1fr); }
+      .e-decisions { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -123,7 +185,7 @@
           </p>
           <div class="hero-buttons">
             <a class="btn btn-outline" href="index.html#projects">&larr; Back to Projects</a>
-            <a class="btn" href="#wireframe">View Wireframe</a>
+            <a class="btn" href="#prototype">View Prototype</a>
           </div>
           <div class="chips" style="margin-top:16px;">
             <span class="chip">Figma</span>
@@ -156,106 +218,73 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">Overview</h2>
-        <p class="section-lead reveal">
-          The original homepage contained competing promotions and unclear hierarchy, making it harder for users to quickly start a flight search.
-          This refresh prioritizes a clear primary action, stronger layout structure, and trust cues to reduce hesitation.
-        </p>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Problem</h3>
-            <ul class="bullets">
-              <li>Cluttered layout with competing sections</li>
-              <li>Weak visual hierarchy + CTA competition</li>
-              <li>Trust signals not obvious at key decision moments</li>
-            </ul>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Goals</h3>
-            <ul class="bullets">
-              <li>Make flight search the clear #1 action</li>
-              <li>Improve scanability with spacing and alignment</li>
-              <li>Keep promos, but reduce noise</li>
-              <li>Strengthen perceived credibility</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- RESEARCH & DESIGN -->
     <section class="section alt">
       <div class="container">
-        <h2 class="reveal">Process</h2>
-        <p class="section-lead reveal">I combined evaluation methods with usability testing to validate design decisions.</p>
-        <div class="two-col">
+        <h2 class="reveal">Research &amp; Design</h2>
+        <p class="section-lead reveal">A focused usability study that identified what was breaking down — then redesigned around what users actually needed.</p>
+
+        <div class="e-stats reveal">
+          <div class="e-stat"><span class="e-num">5</span><span class="e-label">Users Tested</span></div>
+          <div class="e-stat"><span class="e-num">3</span><span class="e-label">Research Methods</span></div>
+          <div class="e-stat"><span class="e-num">4</span><span class="e-label">Design Changes</span></div>
+          <div class="e-stat"><span class="e-num">1</span><span class="e-label">Clear #1 CTA</span></div>
+        </div>
+
+        <div class="two-col" style="margin-top:20px;">
           <div class="card reveal">
-            <h3>Methods</h3>
+            <h3>The Problem</h3>
             <ul class="bullets">
-              <li>Competitive analysis of travel booking homepages</li>
-              <li>Heuristic evaluation to identify usability breakdowns</li>
-              <li>Remote moderated usability test via Zoom (5 participants)</li>
+              <li>Cluttered layout with competing promotions</li>
+              <li>Weak visual hierarchy with no clear primary action</li>
+              <li>Trust signals missing at key decision moments</li>
             </ul>
           </div>
           <div class="card reveal" style="--delay:100ms">
-            <h3>Testing (Zoom)</h3>
+            <h3>How I Investigated</h3>
             <ul class="bullets">
-              <li><strong>Goal:</strong> evaluate clarity + what users click first</li>
-              <li><strong>Tasks:</strong> initiate a flight search, find offers, identify trust cues</li>
-              <li><strong>Outcome:</strong> confirmed clearer hierarchy and stronger CTA visibility</li>
+              <li><strong>Competitive analysis</strong> — reviewed booking homepage patterns</li>
+              <li><strong>Heuristic evaluation</strong> — surfaced interface-level breakdowns</li>
+              <li><strong>Zoom testing</strong> — 5 remote users completing real tasks</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="e-decisions reveal" style="--delay:120ms">
+          <div class="e-decision">
+            <strong>Centralized Search</strong>
+            <span>Flight search as the only #1 action</span>
+          </div>
+          <div class="e-decision">
+            <strong>Cleaner Hierarchy</strong>
+            <span>Spacing and structure built for scanning</span>
+          </div>
+          <div class="e-decision">
+            <strong>Controlled Promos</strong>
+            <span>Ads support the page, not compete with it</span>
+          </div>
+          <div class="e-decision">
+            <strong>Trust Signals</strong>
+            <span>Credibility elevated to reduce hesitation</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- INTERACTIVE PROTOTYPE -->
+    <section id="prototype" class="section">
       <div class="container">
-        <h2 class="reveal">Key Design Decisions</h2>
-        <div class="two-col">
-          <div class="card reveal">
-            <h3>Centralized Search</h3>
-            <p class="muted">Flight search is visually prioritized to reduce friction and speed up the primary task.</p>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Cleaner Hierarchy</h3>
-            <p class="muted">Spacing, alignment, and section structure were improved to make scanning easier.</p>
-          </div>
-        </div>
-        <div class="two-col" style="margin-top:18px;">
-          <div class="card reveal">
-            <h3>Promotion Control</h3>
-            <p class="muted">Promotions were structured so they support the page without overpowering the main CTA.</p>
-          </div>
-          <div class="card reveal" style="--delay:100ms">
-            <h3>Trust Signals</h3>
-            <p class="muted">Credibility cues and transparency messaging were elevated to reduce hesitation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="wireframe" class="section alt">
-      <div class="container">
-        <h2 class="reveal">High-Fidelity Wireframe</h2>
-        <p class="section-lead reveal">
-          Here's the high-fidelity wireframe for the refreshed homepage. Hold and drag with your mouse to toggle the design!
-        </p>
+        <h2 class="reveal">Interactive Prototype</h2>
+        <p class="section-lead reveal">Click through the final redesign below. Use the hotspots to navigate between screens.</p>
         <div class="card reveal" style="padding:0; overflow:hidden;">
           <div style="position:relative; width:100%; padding-top:56.25%;">
             <iframe
-              src="https://embed.figma.com/design/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final?node-id=0-1&embed-host=share"
-              title="eDreams homepage high-fidelity wireframe in Figma"
+              src="https://embed.figma.com/proto/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final?node-id=1-2&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+              title="eDreams homepage interactive prototype"
               allowfullscreen
               style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
             </iframe>
           </div>
-        </div>
-        <div style="margin-top:16px;">
-          <a class="text-link" href="https://www.figma.com/file/iwdREwYu8Vq2fHY9hbZnS5/Sundaresan_GIT340_Fall2025C_Final" target="_blank" rel="noopener">
-            Open in Figma &rarr;
-          </a>
         </div>
       </div>
     </section>

@@ -382,14 +382,14 @@ body {
 
 .hero-wave-track {
   display: flex;
-  width: 200%;
   animation: wave-flow 10s linear infinite;
   will-change: transform;
 }
 
 .hero-wave-track svg {
   display: block;
-  width: 50%;
+  width: 100vw;
+  min-width: 100vw;
   height: 60px;
   flex-shrink: 0;
 }
