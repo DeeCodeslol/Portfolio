@@ -11,8 +11,8 @@
   <style>
     /* Mabe Products theme — warm beige + pastels */
     :root {
-      --accent:       #c4856a;
-      --accent-hover: #b0705a;
+      --accent:       #8b4513;
+      --accent-hover: #6b3010;
       --accent-light: #fceee9;
       --bg-alt:       #fdf7f3;
     }
@@ -30,7 +30,7 @@
     .hero h1 { color: var(--text); }
 
     .hero-name {
-      background: linear-gradient(135deg, #c4856a 0%, #a07abf 100%);
+      background: linear-gradient(135deg, #8b4513 0%, #a07abf 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -59,14 +59,14 @@
     .scroll-indicator svg { stroke: var(--accent); }
 
     .btn:not(.btn-outline) {
-      background: #c4856a;
-      border-color: #c4856a;
+      background: #8b4513;
+      border-color: #8b4513;
       color: #ffffff;
     }
     .btn:not(.btn-outline):hover {
-      background: #b0705a;
-      border-color: #b0705a;
-      box-shadow: 0 8px 24px rgba(196,133,106,0.35);
+      background: #6b3010;
+      border-color: #6b3010;
+      box-shadow: 0 8px 24px rgba(139,69,19,0.35);
     }
 
     .btn-outline {
@@ -81,12 +81,12 @@
       box-shadow: none;
     }
 
-    .section h2::after { background: #c4856a; }
+    .section h2::after { background: #8b4513; }
 
     .chip:hover {
       background: #fceee9;
-      border-color: #c4856a;
-      color: #b0705a;
+      border-color: #8b4513;
+      color: #6b3010;
     }
 
     /* Wave uses warm cream fill */
@@ -109,12 +109,12 @@
     }
     .step-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(196,133,106,0.15);
+      box-shadow: 0 16px 40px rgba(139,69,19,0.15);
     }
     .step-num {
       width: 34px; height: 34px;
       border-radius: 10px;
-      background: #c4856a;
+      background: #8b4513;
       color: #fceee9;
       display: flex;
       align-items: center;
@@ -147,7 +147,7 @@
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-    .finding-label.issue { color: #c4856a; }
+    .finding-label.issue { color: #8b4513; }
     .finding-label.fix   { color: #16a34a; }
     .finding-col h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .finding-col p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
@@ -225,9 +225,14 @@
       </div>
 
       <div class="hero-wave" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2880 60" preserveAspectRatio="none">
-          <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 C1620,0 1980,0 2160,30 C2340,60 2700,60 2880,30 L2880,60 L0,60 Z"/>
-        </svg>
+        <div class="hero-wave-track">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 L1440,60 L0,60 Z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,30 C180,0 540,0 720,30 C900,60 1260,60 1440,30 L1440,60 L0,60 Z"/>
+          </svg>
+        </div>
       </div>
     </section>
 
