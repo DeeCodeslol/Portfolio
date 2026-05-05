@@ -181,10 +181,9 @@ body {
 .hero {
   position: relative;
   background: #ffffff;
-  padding: 90px 0 100px;
+  padding: 90px 0 68px;
   overflow: hidden;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.04);
-  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
 }
 
 /* Pastel blob shapes */
@@ -368,6 +367,34 @@ body {
   pointer-events: none;
 }
 
+/* ===========================
+   HERO PARTICLES
+   =========================== */
+.hero-particles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-particles span {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 3px;
+  background: var(--accent);
+  opacity: 0;
+  animation: particle-rise var(--dur, 5s) var(--delay, 0s) ease-in-out infinite;
+}
+
+@keyframes particle-rise {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+  15%  { opacity: 0.55; }
+  85%  { opacity: 0.2; }
+  100% { transform: translateY(-120px) rotate(40deg); opacity: 0; }
+}
 
 /* ===========================
    CURSOR SPARKLE
