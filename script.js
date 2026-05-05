@@ -32,33 +32,7 @@ if (revealEls.length) {
   revealEls.forEach(el => observer.observe(el));
 }
 
-// Cursor-following background blob
-(function () {
-  const blob = document.createElement("div");
-  blob.classList.add("cursor-blob");
-  document.body.appendChild(blob);
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let blobX = mouseX;
-  let blobY = mouseY;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, { passive: true });
-
-  function tick() {
-    blobX += (mouseX - blobX) * 0.07;
-    blobY += (mouseY - blobY) * 0.07;
-    blob.style.left = blobX + "px";
-    blob.style.top  = blobY + "px";
-    requestAnimationFrame(tick);
-  }
-  tick();
-})();
-
-// Cursor sparkle trail
+// Cursor sparkle trail// Cursor sparkle trail
 (function () {
   const COLORS = ["#86efac", "#c4b5fd", "#fde68a", "#67e8f9", "#f9a8d4", "#bbf7d0"];
   let lastSpawn = 0;
