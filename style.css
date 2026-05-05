@@ -45,7 +45,7 @@ body {
 }
 
 .section {
-  padding: 96px 0;
+  padding: 88px 0;
 }
 
 .section.alt {
@@ -536,14 +536,14 @@ body {
 }
 
 .project-thumb--changemaker {
-  background: linear-gradient(140deg, #6b1330 0%, #a8274e 100%);
+  background: linear-gradient(140deg, #fceee9 0%, #d8a5a5 60%, #8C1D40 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .project-thumb--product {
-  background: linear-gradient(140deg, #166534 0%, #16a34a 60%, #d97706 100%);
+  background: linear-gradient(140deg, #dcfce7 0%, #86efac 60%, #16a34a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
