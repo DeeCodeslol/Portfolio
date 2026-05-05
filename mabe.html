@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mabe Products Website Redesign | Dheepthi Sundaresan</title>
+  <title>Mabe Products Usability Study | Dheepthi Sundaresan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -82,6 +82,7 @@
     }
 
     .section h2::after { background: #8b4513; }
+    .hero-particles span { background: var(--accent); }
 
     .chip:hover {
       background: #fceee9;
@@ -89,6 +90,36 @@
       color: #6b3010;
     }
 
+    /* Stats strip */
+    .m-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .m-stat {
+      background: rgba(139, 69, 19, 0.06);
+      border: 1.5px solid rgba(139, 69, 19, 0.15);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .m-num {
+      display: block;
+      font-size: 38px;
+      font-weight: 800;
+      color: #8b4513;
+      line-height: 1;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+    .m-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
 
     /* Numbered process steps */
     .steps-row {
@@ -150,11 +181,29 @@
     .finding-col h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .finding-col p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
+    /* References list */
+    .ref-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .ref-list li {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-left: 16px;
+      border-left: 3px solid rgba(139,69,19,0.25);
+    }
+
     @media (max-width: 860px) {
       .steps-row { grid-template-columns: repeat(2, 1fr); }
+      .m-stats   { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
       .steps-row { grid-template-columns: 1fr; }
+      .m-stats   { grid-template-columns: 1fr; }
       .finding-item { grid-template-columns: 1fr; padding: 20px 0; }
       .finding-col:first-child {
         border-right: none;
@@ -188,30 +237,30 @@
       <div class="hero-blob blob-3" aria-hidden="true"></div>
       <div class="container hero-content">
         <div class="animate-in" style="--anim-delay:0.1s">
-          <p class="tag">UX Research &bull; Usability Testing &bull; Redesign</p>
-          <h1 class="animate-in" style="--anim-delay:0.25s">Mabe Products<br><span class="hero-name">Website Redesign</span></h1>
+          <p class="tag">UX Research &bull; Usability Testing &bull; E-Commerce</p>
+          <h1 class="animate-in" style="--anim-delay:0.25s">Mabe Products<br><span class="hero-name">Usability Study</span></h1>
           <p class="subtitle animate-in" style="--anim-delay:0.45s">
-            A data-driven usability study of mabeproducts.com using pre and post-test questionnaires to measure real user experience before and after targeted redesign changes.
+            A moderated usability study of mabeproducts.com, co-conducted with Esha Perisetla. We tested how effectively the site supports parents shopping for luxury baby carriers and identified three actionable usability issues.
           </p>
           <div class="hero-buttons animate-in" style="--anim-delay:0.6s">
             <a class="btn btn-outline" href="index.html#projects">&larr; Back to Projects</a>
             <a class="btn" href="#findings">View Findings</a>
           </div>
           <div class="chips animate-in" style="margin-top:16px; --anim-delay:0.7s">
-            <span class="chip">Usability Testing</span>
+            <span class="chip">Moderated Think-Aloud</span>
             <span class="chip">Pre/Post Questionnaire</span>
-            <span class="chip">UX Research</span>
-            <span class="chip">Web Redesign</span>
+            <span class="chip">In-Person + Remote</span>
+            <span class="chip">E-Commerce UX</span>
           </div>
         </div>
 
         <div class="hero-card animate-in" style="--anim-delay:0.35s">
           <h2>Project Details</h2>
           <ul class="quick-list">
-            <li><span class="quick-label">Role</span> UX Researcher &amp; Designer</li>
-            <li><span class="quick-label">Site</span> mabeproducts.com</li>
-            <li><span class="quick-label">Methods</span> Pre/post questionnaires, usability testing</li>
-            <li><span class="quick-label">Focus</span> Task success, clarity, satisfaction</li>
+            <li><span class="quick-label">Role</span> UX Researcher</li>
+            <li><span class="quick-label">Co-Author</span> Esha Perisetla</li>
+            <li><span class="quick-label">Course</span> TWC 544, Dr. Lynne Cooke</li>
+            <li><span class="quick-label">Participants</span> 4 users, ~20 min each</li>
           </ul>
         </div>
       </div>
@@ -242,101 +291,147 @@
       <div class="container">
         <h2 class="reveal">Overview</h2>
         <p class="section-lead reveal">
-          The goal of this project was to evaluate the usability of mabeproducts.com with real users, identify where the experience broke down, and use that data to drive targeted redesign decisions that measurably improved the site.
+          mabeproducts.com is an e-commerce platform selling luxury baby carriers. It relies on a minimalistic aesthetic with beige and pastel tones, high-quality lifestyle photography, and detailed product pages to guide customers from discovery to purchase. We selected it for usability testing because shopping for a baby carrier is a high-consideration decision: parents weigh safety, comfort, fit, cost, and style simultaneously, and the site needs to support all of those factors clearly and efficiently.
         </p>
+
+        <div class="m-stats reveal">
+          <div class="m-stat"><span class="m-num">4</span><span class="m-label">Participants</span></div>
+          <div class="m-stat"><span class="m-num">2</span><span class="m-label">Task Scenarios</span></div>
+          <div class="m-stat"><span class="m-num">3</span><span class="m-label">Usability Issues</span></div>
+          <div class="m-stat"><span class="m-num">100%</span><span class="m-label">Task Success Rate</span></div>
+        </div>
+
         <div class="two-col">
           <div class="card reveal">
-            <h3>The Problem</h3>
-            <ul class="bullets">
-              <li>Users struggled to navigate to key product and information pages</li>
-              <li>Visual hierarchy and layout made it difficult to identify primary actions</li>
-              <li>No existing data confirmed or quantified the experience gaps</li>
-            </ul>
+            <h3>The Site</h3>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.7; margin:0;">
+              The homepage introduces users to the brand through featured products, empowering messaging, and calls to action. Navigation is structured at the top with a menu linking to product categories, brand information, and support resources. Individual product pages provide descriptions, images, and highlighted features intended to support the user's decision-making process.
+            </p>
           </div>
           <div class="card reveal" style="--delay:100ms">
-            <h3>The Goals</h3>
-            <ul class="bullets">
-              <li>Establish a usability baseline with pre-test data before any changes</li>
-              <li>Run moderated usability sessions to observe real user behavior</li>
-              <li>Measure improvement with post-test data after redesign</li>
-            </ul>
+            <h3>Why We Tested It</h3>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.7; margin:0;">
+              The site depends on both visual presentation and detailed product information to ease what is ultimately a safety-critical purchase. When either element fails, users lose confidence and abandon the experience. This made it an effective platform for evaluating usability strengths and identifying specific gaps in information design and interface consistency.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RESEARCH PROCESS -->
+    <!-- RESEARCH METHOD -->
     <section class="section">
       <div class="container">
-        <h2 class="reveal">Research Process</h2>
-        <p class="section-lead reveal">A four-stage process ensured every redesign decision was grounded in real user data rather than assumption.</p>
+        <h2 class="reveal">Research Method</h2>
+        <p class="section-lead reveal">A moderated think-aloud approach using a mixed-method format: two sessions conducted in person on a laptop, and two conducted remotely via Zoom with screen sharing. Each participant followed the same structured protocol from start to finish.</p>
         <div class="steps-row">
           <div class="step-card reveal">
             <div class="step-num">1</div>
             <h3>Pre-Test Questionnaire</h3>
-            <p>Collected baseline data on participants' prior experience with the site, general expectations, and confidence levels before any tasks were introduced.</p>
+            <p>Gathered background on each participant's prior purchase experience, baby carrier usage, key decision factors, and concerns when shopping for baby products online.</p>
           </div>
           <div class="step-card reveal" style="--delay:70ms">
             <div class="step-num">2</div>
-            <h3>Usability Sessions</h3>
-            <p>Moderated testing sessions where participants completed key tasks on the live site while thinking aloud, surfacing real-time friction and confusion.</p>
+            <h3>Moderated Think-Aloud Sessions</h3>
+            <p>Participants completed two task scenarios on the live site while verbalizing their thoughts, expectations, and moments of confusion in real time. Sessions ran approximately 20 minutes each.</p>
           </div>
           <div class="step-card reveal" style="--delay:140ms">
             <div class="step-num">3</div>
             <h3>Post-Test Questionnaire</h3>
-            <p>Captured satisfaction scores, perceived ease of use, and specific pain points immediately after task completion to quantify the experience.</p>
+            <p>Captured satisfaction, perceived ease of use, and specific pain points immediately after task completion, along with follow-up questions on what participants felt was missing or unclear.</p>
           </div>
           <div class="step-card reveal" style="--delay:210ms">
             <div class="step-num">4</div>
-            <h3>Analysis and Redesign</h3>
-            <p>Synthesized quantitative questionnaire data and qualitative session observations to identify the highest-impact changes and implement them.</p>
+            <h3>Analysis and Recommendations</h3>
+            <p>Observations and questionnaire data were synthesized to identify recurring patterns across participants, which were then mapped to three specific usability issues with targeted recommendations.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FINDINGS + REDESIGN -->
+    <!-- FINDINGS + RECOMMENDATIONS -->
     <section id="findings" class="section alt">
       <div class="container">
-        <h2 class="reveal">Findings and Redesign Decisions</h2>
-        <p class="section-lead reveal">Pre and post-test data pointed to clear, recurring patterns. Each finding directly informed a specific redesign change.</p>
+        <h2 class="reveal">Findings and Recommendations</h2>
+        <p class="section-lead reveal">All four participants successfully completed both tasks, but consistent friction patterns emerged across sessions. Three usability issues were identified, each grounded in observed behavior and supported by established research.</p>
         <div class="finding-row">
+
           <div class="finding-item reveal">
             <div class="finding-col">
-              <span class="finding-label issue">Finding</span>
-              <h3>Navigation Confusion</h3>
-              <p>Users had difficulty locating product categories and key pages. Multiple participants took incorrect paths before finding their target, indicating unclear labeling and menu structure.</p>
+              <span class="finding-label issue">Finding 1</span>
+              <h3>Disappearing Product Options</h3>
+              <p>Selecting certain color variants caused the entire color selection menu to disappear, creating a navigational dead-end. Two participants were forced to use the back button or restart the task. This violates the usability principles of visibility of system status and consistency: users should always be able to see available actions, and similar interface elements should behave predictably (Nielsen, 1994). When options disappear unexpectedly, users rely on memory rather than recognition, increasing cognitive load (Norman, 2013).</p>
             </div>
             <div class="finding-col">
-              <span class="finding-label fix">Redesign</span>
-              <h3>Simplified Navigation Structure</h3>
-              <p>Reorganized menu labels to reflect how users described the content, reducing cognitive load and making the most-visited pages immediately accessible.</p>
+              <span class="finding-label fix">Recommendation</span>
+              <h3>Keep the Color Menu Always Visible</h3>
+              <p>Display the color selection menu on every product page regardless of stock status. If a color is unavailable, show it as greyed out or label it "Sold Out" rather than removing it. Consistent interface behavior prevents confusion and maintains user trust across the entire product browsing experience.</p>
             </div>
           </div>
+
           <div class="finding-item reveal" style="--delay:80ms">
             <div class="finding-col">
-              <span class="finding-label issue">Finding</span>
-              <h3>Weak Visual Hierarchy</h3>
-              <p>Participants had trouble identifying what to do first on key pages. Post-test scores for ease of finding information were noticeably lower than expected satisfaction.</p>
+              <span class="finding-label issue">Finding 2</span>
+              <h3>Small Font and Dense Text</h3>
+              <p>Three of four participants reported difficulty reading product details due to small font sizes and large unbroken text blocks. Multiple participants zoomed in or lost focus mid-scan. Users do not read web content word for word; they scan for key information, and dense, small text actively disrupts that behavior (Krug, 2014). Poor typography reduces comprehension and task efficiency, particularly in contexts where fast decision-making is expected (Lidwell, Holden, &amp; Butler, 2010).</p>
             </div>
             <div class="finding-col">
-              <span class="finding-label fix">Redesign</span>
-              <h3>Improved Layout and Emphasis</h3>
-              <p>Adjusted spacing, sizing, and visual weight to ensure primary actions and key information were immediately scannable on first load.</p>
+              <span class="finding-label fix">Recommendation</span>
+              <h3>Increase Readability Across Product Pages</h3>
+              <p>Increase font size on product detail sections and restructure dense paragraphs into scannable bullet points. Apply clear typographic hierarchy with adequate spacing between sections so users can quickly identify and evaluate the information most relevant to their purchase decision.</p>
             </div>
           </div>
+
           <div class="finding-item reveal" style="--delay:160ms">
             <div class="finding-col">
-              <span class="finding-label issue">Finding</span>
-              <h3>Low Task Confidence</h3>
-              <p>Pre-test questionnaires revealed low initial confidence, and post-test follow-up showed that unclear CTAs and sparse product information reinforced user hesitation throughout sessions.</p>
+              <span class="finding-label issue">Finding 3</span>
+              <h3>Missing Age and Weight Information</h3>
+              <p>Two participants could not determine the age range or weight capacity for the products from the product page. This safety-critical information existed only in the FAQ section, requiring users to navigate away at the exact moment they were evaluating a purchase. This breaks the usability principle of matching system organization to user expectations: information should be placed where users naturally look for it (Nielsen, 1994).</p>
             </div>
             <div class="finding-col">
-              <span class="finding-label fix">Redesign</span>
-              <h3>Clearer CTAs and Content</h3>
-              <p>Rewrote and repositioned calls to action, and added supporting content to reduce uncertainty at key decision points and encourage users to move forward with confidence.</p>
+              <span class="finding-label fix">Recommendation</span>
+              <h3>Surface Key Safety Details on the Product Page</h3>
+              <p>Include age range and weight capacity directly in the product details section for every carrier. For parents evaluating safety and fit, this information is a primary decision factor. Requiring a secondary search for it introduces hesitation and erodes confidence at the most critical point in the purchase journey.</p>
             </div>
           </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL REPORT -->
+    <section id="report" class="section">
+      <div class="container">
+        <h2 class="reveal">Full Report</h2>
+        <p class="section-lead reveal">Read the complete usability study, including participant profiles, task findings, evidence-based analysis, and all recommendations.</p>
+        <div class="card reveal" style="padding:0; overflow:hidden;">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              src="Mabe_UsabilityReport-2.pdf"
+              title="Mabe Products usability study report PDF"
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+            </iframe>
+          </div>
+        </div>
+        <div style="margin-top:16px;">
+          <a class="text-link" href="Mabe_UsabilityReport-2.pdf" target="_blank" rel="noopener">
+            Open Full Report &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="section alt">
+      <div class="container">
+        <h2 class="reveal">References</h2>
+        <div class="card reveal">
+          <ul class="ref-list">
+            <li>Hassenzahl, M. (2010). <em>Experience design: Technology for all the right reasons.</em> Morgan &amp; Claypool.</li>
+            <li>Krug, S. (2014). <em>Don't make me think, revisited: A common sense approach to web usability.</em> New Riders.</li>
+            <li>Lidwell, W., Holden, K., &amp; Butler, J. (2010). <em>Universal principles of design.</em> Rockport Publishers.</li>
+            <li>Nielsen, J. (1994). <em>Usability engineering.</em> Morgan Kaufmann.</li>
+            <li>Norman, D. A. (2013). <em>The design of everyday things</em> (Revised ed.). Basic Books.</li>
+          </ul>
         </div>
       </div>
     </section>
