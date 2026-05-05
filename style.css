@@ -536,14 +536,14 @@ body {
 }
 
 .project-thumb--changemaker {
-  background: linear-gradient(140deg, #fceee9 0%, #d8a5a5 60%, #8C1D40 100%);
+  background: linear-gradient(140deg, #5a0d28 0%, #8C1D40 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .project-thumb--product {
-  background: linear-gradient(140deg, #dcfce7 0%, #86efac 60%, #16a34a 100%);
+  background: linear-gradient(140deg, #14532d 0%, #16a34a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
