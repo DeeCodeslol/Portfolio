@@ -11,6 +11,16 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     .hero { background: linear-gradient(175deg, #ffffff 50%, var(--bg-alt) 100%); }
+    .btn-outline-accent {
+      background: transparent;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .btn-outline-accent:hover {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body>
@@ -48,8 +58,7 @@
           </p>
           <div class="hero-buttons animate-in" style="--anim-delay: 0.6s">
             <a class="btn" href="#projects">View Projects</a>
-            <a class="btn btn-outline" href="DheepthiS_Resume.docx.pdf" target="_blank" rel="noopener">View Resume</a>
-            <a class="btn btn-outline" href="DheepthiS_Resume.docx.pdf" download>Download Resume</a>
+            <a class="btn btn-outline-accent" href="DheepthiS_Resume.docx.pdf" target="_blank" rel="noopener">View Resume</a>
             <a class="btn btn-outline" href="#contact">Let's Talk</a>
           </div>
         </div>
