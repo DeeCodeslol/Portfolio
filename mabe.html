@@ -181,6 +181,55 @@
     .finding-col h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .finding-col p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
+    /* Implemented pages pills */
+    .m-pages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .m-page-pill {
+      background: rgba(139, 69, 19, 0.07);
+      border: 1.5px solid rgba(139, 69, 19, 0.2);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #8b4513;
+      letter-spacing: 0.02em;
+    }
+
+    /* Impact callout */
+    .impact-callout {
+      background: rgba(139, 69, 19, 0.06);
+      border: 1.5px solid rgba(139, 69, 19, 0.18);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .impact-callout-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .impact-callout strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b4513;
+      margin-bottom: 4px;
+    }
+    .impact-callout p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
     /* References list */
     .ref-list {
       list-style: none;
@@ -291,7 +340,7 @@
       <div class="container">
         <h2 class="reveal">Overview</h2>
         <p class="section-lead reveal">
-          mabeproducts.com is an e-commerce platform selling luxury baby carriers. It relies on a minimalistic aesthetic with beige and pastel tones, high-quality lifestyle photography, and detailed product pages to guide customers from discovery to purchase. We selected it for usability testing because shopping for a baby carrier is a high-consideration decision: parents weigh safety, comfort, fit, cost, and style simultaneously, and the site needs to support all of those factors clearly and efficiently.
+          mabeproducts.com is an e-commerce platform selling luxury baby carriers. It relies on a minimalistic aesthetic with beige and pastel tones, high-quality lifestyle photography, and detailed product pages to guide customers from discovery to purchase. We selected it for usability testing because shopping for a baby carrier is a high-consideration decision: parents weigh safety, comfort, fit, cost, and style simultaneously, and the site needs to support all of those factors clearly and efficiently. Our evaluation was grounded in Nielsen Norman Group UX principles, applying Nielsen's (1994) ten usability heuristics as the analytical framework for identifying interface breakdowns and guiding our recommendations.
         </p>
 
         <div class="m-stats reveal">
@@ -398,8 +447,42 @@
       </div>
     </section>
 
+    <!-- WIREFRAMES -->
+    <section id="wireframes" class="section">
+      <div class="container">
+        <h2 class="reveal">High-Fidelity Wireframes</h2>
+        <p class="section-lead reveal">Our recommendations were not just theoretical. We translated each finding into high-fidelity wireframes across four pages of the site, and Mabe Products implemented these changes on their live platform.</p>
+
+        <div class="m-pages reveal">
+          <span class="m-page-pill">Homepage</span>
+          <span class="m-page-pill">Shop All</span>
+          <span class="m-page-pill">Individual Product Page</span>
+          <span class="m-page-pill">Contact</span>
+        </div>
+
+        <div class="impact-callout reveal">
+          <div class="impact-callout-icon">&#10003;</div>
+          <div>
+            <strong>Implemented by the Brand</strong>
+            <p>Mabe Products adopted our wireframes and applied the design changes to their live site. Each page was updated to directly address the usability issues uncovered during testing.</p>
+          </div>
+        </div>
+
+        <div class="card reveal" style="padding:0; overflow:hidden;">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=0-1&embed-host=share"
+              title="High-fidelity wireframes for Mabe Products redesign"
+              allowfullscreen
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FULL REPORT -->
-    <section id="report" class="section">
+    <section id="report" class="section alt">
       <div class="container">
         <h2 class="reveal">Full Report</h2>
         <p class="section-lead reveal">Read the complete usability study, including participant profiles, task findings, evidence-based analysis, and all recommendations.</p>
