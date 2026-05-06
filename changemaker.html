@@ -177,6 +177,37 @@
     .finding-col p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
 
+    /* Impact callout */
+    .impact-callout {
+      background: rgba(140, 29, 64, 0.06);
+      border: 1.5px solid rgba(140, 29, 64, 0.2);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .impact-callout-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: #FFC627;
+    }
+    .impact-callout strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #8C1D40;
+      margin-bottom: 4px;
+    }
+    .impact-callout p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
     @media (max-width: 700px) {
       .stats-row { grid-template-columns: 1fr; }
       .steps-row { grid-template-columns: 1fr; }
@@ -359,8 +390,23 @@
       </div>
     </section>
 
+    <!-- REAL-WORLD IMPACT -->
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Real-World Impact</h2>
+        <p class="section-lead reveal">This evaluation went beyond a classroom deliverable. Changemaker at ASU West Valley reviewed the findings and acted on the recommendations, applying the proposed changes directly to their live website.</p>
+        <div class="impact-callout reveal">
+          <div class="impact-callout-icon">&#10003;</div>
+          <div>
+            <strong>Recommendations Implemented by Changemaker at ASU West Valley</strong>
+            <p>The organization took the research seriously. The navigation restructuring, procedural transparency improvements, and content consistency updates were all incorporated into the live site, turning a student-led evaluation into measurable organizational change.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FULL REPORT -->
-    <section id="report" class="section">
+    <section id="report" class="section alt">
       <div class="container">
         <h2 class="reveal">Full Report</h2>
         <p class="section-lead reveal">Read the complete usability evaluation report.</p>

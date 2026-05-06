@@ -186,7 +186,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
     .m-page-pill {
       background: rgba(139, 69, 19, 0.07);
@@ -197,6 +197,62 @@
       font-weight: 700;
       color: #8b4513;
       letter-spacing: 0.02em;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.18s, border-color 0.18s, box-shadow 0.18s;
+    }
+    .m-page-pill:hover {
+      background: rgba(139, 69, 19, 0.13);
+      border-color: rgba(139, 69, 19, 0.4);
+    }
+    .m-page-pill.active {
+      background: #8b4513;
+      border-color: #8b4513;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(139, 69, 19, 0.3);
+    }
+
+    /* Fidelity legend */
+    .wireframe-legend {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 13px 18px;
+      background: #fdf8f5;
+      border: 1px solid rgba(139, 69, 19, 0.12);
+      border-radius: 12px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .legend-dot--original { background: #c8a98a; }
+    .legend-dot--lofi     { background: #a07858; }
+    .legend-dot--hifi     { background: #8b4513; }
+    .legend-arrow {
+      color: #c8a98a;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .legend-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-right: 6px;
     }
 
     /* Impact callout */
@@ -453,11 +509,20 @@
         <h2 class="reveal">High-Fidelity Wireframes</h2>
         <p class="section-lead reveal">Our recommendations were not just theoretical. We translated each finding into high-fidelity wireframes across four pages of the site, and Mabe Products implemented these changes on their live platform.</p>
 
-        <div class="m-pages reveal">
-          <span class="m-page-pill">Homepage</span>
-          <span class="m-page-pill">Shop All</span>
-          <span class="m-page-pill">Individual Product Page</span>
-          <span class="m-page-pill">Contact</span>
+        <div class="m-pages reveal" id="page-pills">
+          <button class="m-page-pill active" data-node="2-4857">Homepage</button>
+          <button class="m-page-pill" data-node="59-339">Shop All</button>
+          <button class="m-page-pill" data-node="93-1326">Individual Product Page</button>
+          <button class="m-page-pill" data-node="91-19">Contact</button>
+        </div>
+
+        <div class="wireframe-legend reveal">
+          <span class="legend-label">How to read:</span>
+          <div class="legend-item"><span class="legend-dot legend-dot--original"></span>Original Website</div>
+          <span class="legend-arrow">&rarr;</span>
+          <div class="legend-item"><span class="legend-dot legend-dot--lofi"></span>Low Fidelity (our process)</div>
+          <span class="legend-arrow">&rarr;</span>
+          <div class="legend-item"><span class="legend-dot legend-dot--hifi"></span>High Fidelity (our design)</div>
         </div>
 
         <div class="impact-callout reveal">
@@ -471,13 +536,30 @@
         <div class="card reveal" style="padding:0; overflow:hidden;">
           <div style="position:relative; width:100%; padding-top:56.25%;">
             <iframe
-              src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=0-1&embed-host=share"
+              id="figma-embed"
+              src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=2-4857&embed-host=share"
               title="High-fidelity wireframes for Mabe Products redesign"
               allowfullscreen
               style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
             </iframe>
           </div>
         </div>
+
+        <script>
+          (function () {
+            var pills    = document.querySelectorAll('#page-pills .m-page-pill');
+            var embed    = document.getElementById('figma-embed');
+            var base     = 'https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?embed-host=share&node-id=';
+
+            pills.forEach(function (pill) {
+              pill.addEventListener('click', function () {
+                pills.forEach(function (p) { p.classList.remove('active'); });
+                pill.classList.add('active');
+                embed.src = base + pill.dataset.node;
+              });
+            });
+          })();
+        </script>
       </div>
     </section>
 
