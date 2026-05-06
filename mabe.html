@@ -212,8 +212,58 @@
       box-shadow: 0 4px 14px rgba(139, 69, 19, 0.3);
     }
 
-    /* Fidelity legend */
-    .wireframe-legend {
+    /* Three-column wireframe compare */
+    .wireframe-compare {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .wireframe-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .wireframe-col-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--card-border);
+    }
+    .wireframe-col--original .wireframe-col-label {
+      color: #a89080;
+      border-bottom-color: #a89080;
+    }
+    .wireframe-col--lofi .wireframe-col-label {
+      color: #8b6b5f;
+      border-bottom-color: #8b6b5f;
+    }
+    .wireframe-col--hifi .wireframe-col-label {
+      color: #8b4513;
+      border-bottom-color: #8b4513;
+    }
+    .wireframe-embed {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      flex-grow: 1;
+    }
+    .wireframe-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+    }
+    @media (max-width: 1100px) {
+      .wireframe-compare { grid-template-columns: 1fr; gap: 24px; }
+      .wireframe-col { margin-bottom: 12px; }
+    }
       display: flex;
       align-items: center;
       gap: 10px;
@@ -510,19 +560,10 @@
         <p class="section-lead reveal">Our recommendations were not just theoretical. We translated each finding into high-fidelity wireframes across four pages of the site, and Mabe Products implemented these changes on their live platform.</p>
 
         <div class="m-pages reveal" id="page-pills">
-          <button class="m-page-pill active" data-node="2-4857">Homepage</button>
-          <button class="m-page-pill" data-node="59-339">Shop All</button>
-          <button class="m-page-pill" data-node="93-1326">Individual Product Page</button>
-          <button class="m-page-pill" data-node="91-19">Contact</button>
-        </div>
-
-        <div class="wireframe-legend reveal">
-          <span class="legend-label">How to read:</span>
-          <div class="legend-item"><span class="legend-dot legend-dot--original"></span>Original Website</div>
-          <span class="legend-arrow">&rarr;</span>
-          <div class="legend-item"><span class="legend-dot legend-dot--lofi"></span>Low Fidelity (our process)</div>
-          <span class="legend-arrow">&rarr;</span>
-          <div class="legend-item"><span class="legend-dot legend-dot--hifi"></span>High Fidelity (our design)</div>
+          <button class="m-page-pill active" data-page="homepage">Homepage</button>
+          <button class="m-page-pill" data-page="shop-all">Shop All</button>
+          <button class="m-page-pill" data-page="product">Individual Product Page</button>
+          <button class="m-page-pill" data-page="contact">Contact</button>
         </div>
 
         <div class="impact-callout reveal">
@@ -533,29 +574,53 @@
           </div>
         </div>
 
-        <div class="card reveal" style="padding:0; overflow:hidden;">
-          <div style="position:relative; width:100%; padding-top:56.25%;">
-            <iframe
-              id="figma-embed"
-              src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=2-4857&embed-host=share"
-              title="High-fidelity wireframes for Mabe Products redesign"
-              allowfullscreen
-              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
-            </iframe>
+        <div class="wireframe-compare reveal">
+          <div class="wireframe-col wireframe-col--original">
+            <div class="wireframe-col-label">Original Website</div>
+            <div class="wireframe-embed">
+              <iframe id="figma-original" src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=2-459&embed-host=share" allowfullscreen style="border:none;"></iframe>
+            </div>
+          </div>
+          <div class="wireframe-col wireframe-col--lofi">
+            <div class="wireframe-col-label">Low Fidelity</div>
+            <div class="wireframe-embed">
+              <iframe id="figma-lofi" src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=39-2&embed-host=share" allowfullscreen style="border:none;"></iframe>
+            </div>
+          </div>
+          <div class="wireframe-col wireframe-col--hifi">
+            <div class="wireframe-col-label">High Fidelity (Our Design)</div>
+            <div class="wireframe-embed">
+              <iframe id="figma-hifi" src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=2-4857&embed-host=share" allowfullscreen style="border:none;"></iframe>
+            </div>
           </div>
         </div>
 
         <script>
           (function () {
-            var pills    = document.querySelectorAll('#page-pills .m-page-pill');
-            var embed    = document.getElementById('figma-embed');
-            var base     = 'https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?embed-host=share&node-id=';
+            var pills       = document.querySelectorAll('#page-pills .m-page-pill');
+            var embedOriginal = document.getElementById('figma-original');
+            var embedLofi   = document.getElementById('figma-lofi');
+            var embedHifi   = document.getElementById('figma-hifi');
+            var base        = 'https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?embed-host=share&node-id=';
+
+            var pageData = {
+              'homepage': { original: '2-459', lofi: '39-2', hifi: '2-4857' },
+              'shop-all': { original: '2-1991', lofi: '28-84', hifi: '59-339' },
+              'product': { original: '2-4337', lofi: '91-175', hifi: '93-1326' },
+              'contact': { original: '2-4826', lofi: '55-629', hifi: '91-19' }
+            };
 
             pills.forEach(function (pill) {
               pill.addEventListener('click', function () {
-                pills.forEach(function (p) { p.classList.remove('active'); });
-                pill.classList.add('active');
-                embed.src = base + pill.dataset.node;
+                var pageKey = pill.dataset.page;
+                var data = pageData[pageKey];
+                if (data) {
+                  pills.forEach(function (p) { p.classList.remove('active'); });
+                  pill.classList.add('active');
+                  embedOriginal.src = base + data.original;
+                  embedLofi.src = base + data.lofi;
+                  embedHifi.src = base + data.hifi;
+                }
               });
             });
           })();
