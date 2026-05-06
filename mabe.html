@@ -557,13 +557,6 @@
         <h2 class="reveal">High-Fidelity Wireframes</h2>
         <p class="section-lead reveal">Our recommendations were not just theoretical. We translated each finding into high-fidelity wireframes across four pages of the site, and Mabe Products implemented these changes on their live platform.</p>
 
-        <div class="m-pages reveal" id="page-pills">
-          <button class="m-page-pill active" data-page="homepage">Homepage</button>
-          <button class="m-page-pill" data-page="shop-all">Shop All</button>
-          <button class="m-page-pill" data-page="product">Individual Product Page</button>
-          <button class="m-page-pill" data-page="contact">Contact</button>
-        </div>
-
         <div class="impact-callout reveal">
           <div class="impact-callout-icon">&#10003;</div>
           <div>
@@ -572,57 +565,29 @@
           </div>
         </div>
 
-        <div class="wireframe-compare reveal">
-          <div class="wireframe-col wireframe-col--original">
-            <div class="wireframe-col-label">Original Website</div>
-            <div class="wireframe-embed">
-              <iframe id="figma-original" src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=2-459&embed-host=share" allowfullscreen style="border:none;"></iframe>
-            </div>
-          </div>
-          <div class="wireframe-col wireframe-col--lofi">
-            <div class="wireframe-col-label">Low Fidelity</div>
-            <div class="wireframe-embed">
-              <iframe id="figma-lofi" src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=39-2&embed-host=share" allowfullscreen style="border:none;"></iframe>
-            </div>
-          </div>
-          <div class="wireframe-col wireframe-col--hifi">
-            <div class="wireframe-col-label">High Fidelity (Our Design)</div>
-            <div class="wireframe-embed">
-              <iframe id="figma-hifi" src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=2-4857&embed-host=share" allowfullscreen style="border:none;"></iframe>
-            </div>
-          </div>
+        <div class="wireframe-legend reveal">
+          <span class="legend-label">How to read:</span>
+          <div class="legend-item"><span class="legend-dot legend-dot--original"></span>Left &mdash; Original Website</div>
+          <span class="legend-arrow">&rarr;</span>
+          <div class="legend-item"><span class="legend-dot legend-dot--lofi"></span>Middle &mdash; Low Fidelity (our process)</div>
+          <span class="legend-arrow">&rarr;</span>
+          <div class="legend-item"><span class="legend-dot legend-dot--hifi"></span>Right &mdash; High Fidelity (our design)</div>
         </div>
 
-        <script>
-          (function () {
-            var pills       = document.querySelectorAll('#page-pills .m-page-pill');
-            var embedOriginal = document.getElementById('figma-original');
-            var embedLofi   = document.getElementById('figma-lofi');
-            var embedHifi   = document.getElementById('figma-hifi');
-            var base        = 'https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?embed-host=share&node-id=';
+        <p class="reveal" style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+          Tip: click the panel icon in the top-left corner of the embed to toggle between pages.
+        </p>
 
-            var pageData = {
-              'homepage': { original: '2-459', lofi: '39-2', hifi: '2-4857' },
-              'shop-all': { original: '2-1991', lofi: '28-84', hifi: '59-339' },
-              'product': { original: '2-4337', lofi: '91-175', hifi: '93-1326' },
-              'contact': { original: '2-4826', lofi: '55-629', hifi: '91-19' }
-            };
-
-            pills.forEach(function (pill) {
-              pill.addEventListener('click', function () {
-                var pageKey = pill.dataset.page;
-                var data = pageData[pageKey];
-                if (data) {
-                  pills.forEach(function (p) { p.classList.remove('active'); });
-                  pill.classList.add('active');
-                  embedOriginal.src = base + data.original;
-                  embedLofi.src = base + data.lofi;
-                  embedHifi.src = base + data.hifi;
-                }
-              });
-            });
-          })();
-        </script>
+        <div class="card reveal" style="padding:0; overflow:hidden;">
+          <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe
+              src="https://embed.figma.com/design/4NYTlk3lXCHiZsZ81BO5RR/High-Fidelity-Wireframes?node-id=55-629&embed-host=share"
+              title="Mabe Products wireframes — original, low fidelity, and high fidelity"
+              allowfullscreen
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+            </iframe>
+          </div>
+        </div>
       </div>
     </section>
 
